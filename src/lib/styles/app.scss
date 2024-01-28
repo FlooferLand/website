@@ -1,0 +1,59 @@
+@import "@fontsource/manrope";
+@import "@fontsource/jetbrains-mono";
+@import "./themes/dark.scss";
+@import "./themes/light.scss";
+@import "./post.scss";
+
+html {
+	/* font */
+	--font-sans: "Manrope", sans-serif;
+	--font-mono: "JetBrains Mono", monospace;
+
+	color-scheme: dark;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	color: var(--text-1);
+	accent-color: var(--link);
+	background-image: var(--background);
+	background-attachment: fixed;
+}
+
+img {
+	border-radius: var(--radius-3);
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	padding-inline-start: 0;
+}
+
+.surface-1 {
+	background-color: var(--surface-1);
+	color: var(--text-2);
+}
+
+.surface-2 {
+	background-color: var(--surface-2);
+	color: var(--text-2);
+}
+
+.surface-3 {
+	background-color: var(--surface-3);
+	color: var(--text-1);
+}
+
+.surface-4 {
+	background-color: var(--surface-4);
+	color: var(--text-1);
+}

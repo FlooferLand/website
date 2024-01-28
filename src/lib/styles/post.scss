@@ -1,0 +1,31 @@
+.post-content :is(h2, h3, h4, h5, h6) {
+	margin-top: var(--size-8);
+	margin-bottom: var(--size-3);
+}
+
+.post-content p:not(:is(h2, h3, h4, h5, h6) + p) {
+	margin-top: var(--size-7);
+}
+
+.post-content :is(ul, ol) {
+	list-style-type: "- ";
+	padding-left: var(--size-5);
+}
+
+.post-content :is(ul, ol) li {
+	margin-block: var(--size-2);
+	padding-inline-start: var(--size-2);
+}
+
+.post-content pre {
+	background: rgba(0, 0, 0, 0.25);
+	max-inline-size: 100%;
+	padding: 1rem;
+	border-radius: 8px;
+	tab-size: 2;
+	cursor: default;
+
+	.line {
+		cursor: text;
+	}
+}
