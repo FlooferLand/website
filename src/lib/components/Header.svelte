@@ -2,6 +2,7 @@
 
 <script lang="ts">
 	import { NavLink } from "$lib/components";
+	import ThemeToggle from "./ThemeToggle.svelte";
 </script>
 
 <nav>
@@ -11,10 +12,10 @@
 
 	<ul class="links">
 		<NavLink route="/about" text="About me" />
-		<NavLink route="/rss.xml" text="RSS feed" />
+		<NavLink route="/rss" text="RSS feed" />
 	</ul>
 
-	<button>Theme</button>
+	<ThemeToggle />
 </nav>
 
 <style>

@@ -2,6 +2,9 @@ import adapter from "@sveltejs/adapter-auto";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { escapeSvelte, mdsvex } from "mdsvex";
 import { getHighlighter, bundledLanguages } from "shiki";
+import remarkUnwrapImages from "remark-unwrap-images";
+import remarkToc from "remark-toc";
+import rehypeSlug from "rehype-slug";
 
 async function highlighter(code, lang = "text") {
 	const highlighter = await getHighlighter({
@@ -25,7 +28,9 @@ const mdsvexOptions = {
 	},
 	layout: {
 		_: "./src/mdsvex.svelte"
-	}
+	},
+	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
+	rehypePlugins: [rehypeSlug]
 };
 
 /** @type {import("@sveltejs/kit").Config} */

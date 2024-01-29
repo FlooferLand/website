@@ -3,4 +3,6 @@
 	export let text: string;
 </script>
 
-<li><a href={route}> {text} </a></li>
+<li>
+	<a href={route}>{text}</a>
+</li>

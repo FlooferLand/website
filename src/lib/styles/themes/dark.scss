@@ -1,15 +1,22 @@
+@mixin dark-theme {
+	color-scheme: dark;
+	--brand: var(--purple-5);
+	--text-1: var(--gray-3);
+	--text-2: var(--gray-5);
+	--surface-1: var(--gray-12);
+	--surface-2: var(--gray-11);
+	--surface-3: var(--gray-10);
+	--surface-4: var(--gray-9);
+	--background: var(--gradient-8);
+	--border: var(--gray-9);
+}
+
 @media (prefers-color-scheme: dark) {
 	:root {
-		color-scheme: dark;
-
-		--brand: var(--purple-5);
-		--text-1: var(--gray-3);
-		--text-2: var(--gray-5);
-		--surface-1: var(--gray-12);
-		--surface-2: var(--gray-11);
-		--surface-3: var(--gray-10);
-		--surface-4: var(--gray-9);
-		--background: var(--gradient-8);
-		--border: var(--gray-9);
+		@include dark-theme;
 	}
+}
+
+[color-scheme="dark"] {
+	@include dark-theme;
 }

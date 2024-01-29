@@ -1,0 +1,8 @@
+# "No HTML in markdown" 🤓☝️
+MD033: false
+
+# Top level header/h1 requirement
+MD041: false
+
+# "Lines must not be wider than your mother" requirement
+MD013: false

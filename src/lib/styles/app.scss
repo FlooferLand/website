@@ -4,10 +4,11 @@
 @import "./themes/light.scss";
 @import "./post.scss";
 
-html {
+html,
+:root {
 	/* font */
-	--font-sans: "Manrope", sans-serif;
-	--font-mono: "JetBrains Mono", monospace;
+	--font-sans: "Manrope", sans-serif !important;
+	--font-mono: "JetBrains Mono", monospace !important;
 
 	color-scheme: dark;
 }

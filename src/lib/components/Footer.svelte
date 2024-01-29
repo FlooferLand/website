@@ -1,25 +1,37 @@
 <!-- The footer for every single page -->
 
+<script lang="ts">
+	import { Link } from "$lib/components";
+</script>
+
 <footer>
-	<p id="copyright">FlooferLand &copy; {new Date().getFullYear()}</p>
-	<span id="noscript-notice">JavaScript is optional</span>
+	<Link text={`FlooferLand ©️ ${new Date().getFullYear()}`} url="https://github.com/FlooferLand" id="copyright" />
+	<div id="freedom-notice">
+		<p>My website is <Link text="Free and Open-Source" url="https://www.gnu.org/philosophy/free-sw.en.html" light />
+			software licensed under GPL-3.</p>
+		<p>The website is built using <Link text="SvelteKit" url="https://kit.svelte.dev" light />,
+			which is a FOSS project licensed under MIT.</p>
+		<Link text="You may view the website source code here (GitHub)" url="https://github.com/FlooferLand/blog_website" />
+	</div>
 </footer>
 
 <style>
 	footer {
 		padding-block: var(--size-6);
 		border-top: 1px solid var(--border);
+		width: 100%;
 	}
 
 	p {
 		color: var(--text-2);
 	}
 
-	#copyright {
+	/*#copyright {
 		font-size: var(--font-size-3);
-	}
+	}*/
 
-	#noscript-notice {
+	#freedom-notice {
 		font-size: var(--font-size-1);
+		width: 100%;
 	}
 </style>
