@@ -22,7 +22,7 @@ async function highlighter(code, lang = "text") {
 
 /** @type {import("mdsvex").mdsvexOptions} */
 const mdsvexOptions = {
-	extensions: [".md"],
+	extensions: [".md", ".svx"],
 	highlight: {
 		highlighter: highlighter
 	},
@@ -36,7 +36,7 @@ const mdsvexOptions = {
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
 	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
-	extensions: [".svelte", ".md"],
+	extensions: [".svelte", ".md", ".svx"],
 
 	kit: {
 		adapter: adapter()

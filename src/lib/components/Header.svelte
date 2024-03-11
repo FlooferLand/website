@@ -5,22 +5,30 @@
 	import ThemeToggle from "./ThemeToggle.svelte";
 </script>
 
-<nav>
-	<a href="/" class="logo">
-		<b>Floof's Fluffy Blog</b>
-	</a>
+<main>
+	<nav>
+		<a href="/" class="logo">
+			<b>Floof's Fluffy Blog</b>
+		</a>
 
-	<ul class="links">
-		<NavLink route="/about" text="About me" />
-		<NavLink route="/rss" text="RSS feed" />
-	</ul>
+		<ul class="links">
+			<NavLink route="/about" text="About me" />
+			<NavLink route="/rss" text="RSS feed" />
+		</ul>
 
-	<ThemeToggle />
-</nav>
+		<ThemeToggle />
+	</nav>
+	<hr />
+</main>
 
 <style>
 	nav {
 		padding-block: var(--size-6);
+	}
+
+	hr {
+		padding: 0%;
+		margin: 0%;
 	}
 
 	.links {

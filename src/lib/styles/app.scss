@@ -4,8 +4,7 @@
 @import "./themes/light.scss";
 @import "./post.scss";
 
-html,
-:root {
+html, :root {
 	/* font */
 	--font-sans: "Manrope", sans-serif !important;
 	--font-mono: "JetBrains Mono", monospace !important;
@@ -13,15 +12,18 @@ html,
 	color-scheme: dark;
 }
 
-html,
-body {
+h1, h2, h3, h4, h5, h6 {
+	padding-bottom: 12pt;
+}
+
+html, body {
 	height: 100%;
 }
 
 html {
 	color: var(--text-1);
 	accent-color: var(--link);
-	background-image: var(--background);
+	background: var(--background);
 	background-attachment: fixed;
 }
 
@@ -29,8 +31,7 @@ img {
 	border-radius: var(--radius-3);
 }
 
-ul,
-ol {
+ul, ol {
 	list-style: none;
 	padding: 0;
 }

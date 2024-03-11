@@ -1,3 +1,5 @@
+@use "sass:color" as color;
+
 @mixin dark-theme {
 	color-scheme: dark;
 	--brand: var(--purple-5);
@@ -7,7 +9,7 @@
 	--surface-2: var(--gray-11);
 	--surface-3: var(--gray-10);
 	--surface-4: var(--gray-9);
-	--background: var(--gradient-8);
+	--background: #111;  // Fuck VSCode and its broken SCSS intellisense
 	--border: var(--gray-9);
 }
 
