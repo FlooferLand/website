@@ -1,14 +1,17 @@
 @mixin light-theme {
 	color-scheme: light;
-	--brand: var(--purple-4);
-	--text-1: var(--gray-8);
-	--text-2: var(--gray-7);
+	--primary: #6d3ab9;
+	--text-1: #000000;
+	--text-2: #1b161c;
+	--link: rgb(98, 55, 124);
 	--surface-1: var(--gray-0);
 	--surface-2: var(--gray-1);
 	--surface-3: var(--gray-2);
 	--surface-4: var(--gray-3);
-	--background: none;
 	--border: var(--gray-4);
+	--background: none;
+	--wallpaper: url(ltmode-wallpaper.jpg);
+	--font-weight: 700;
 }
 
 @media (prefers-color-scheme: light) {

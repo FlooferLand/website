@@ -2,11 +2,10 @@
 	import "open-props/style";
 	import "open-props/normalize";
 	import "open-props/buttons";
-	import "open-props/colors";
 
 	// Not sure what these do but they sound cool!
-	import "open-props/media";
-	import "open-props/camo";
+	// import "open-props/media";
+	// import "open-props/camo";
 
 	// Components
 	import { Header, Footer } from "$lib/components";

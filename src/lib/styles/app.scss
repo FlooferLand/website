@@ -3,17 +3,26 @@
 @import "./themes/dark.scss";
 @import "./themes/light.scss";
 @import "./post.scss";
+@import "./shiki.scss";
 
 html, :root {
 	/* font */
 	--font-sans: "Manrope", sans-serif !important;
 	--font-mono: "JetBrains Mono", monospace !important;
+	font-weight: var(--font-weight) !important;
 
 	color-scheme: dark;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	padding-bottom: 12pt;
+}
+
+a {
+	color: var(--link);
+	:visited {
+		color: var(--link);
+	}
 }
 
 html, body {
@@ -23,8 +32,7 @@ html, body {
 html {
 	color: var(--text-1);
 	accent-color: var(--link);
-	background: var(--background);
-	background-attachment: fixed;
+	background: var(--wallpaper) no-repeat center/110% fixed;
 }
 
 img {

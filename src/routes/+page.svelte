@@ -7,7 +7,8 @@
 	<ul class="posts">
 		{#each data.posts as post}
 			<li class="post">
-				<a href={"/post/" + post.slug} class="title">{post.title}</a>
+				<img class="thumbnail" src={post.thumbnail} alt="thumbnail" />
+				<a class="title" href={"/post/" + post.slug}>{post.title}</a>
 				<p class="date">{formatDate(post.date)}</p>
 				<p class="desc">{post.desc}</p>
 			</li>
@@ -28,6 +29,15 @@
 	.post:not(:last-child) {
 		border-bottom: 1px solid var(--border);
 		padding-bottom: var(--size-7);
+	}
+
+	.thumbnail {
+		width: 30%;
+		background-size: cover;
+		float: left;
+		margin: 10pt 30pt 10pt 10pt;
+		box-shadow: 0pt 0pt 15pt rgba(255, 255, 255, 0.2);
+		-webkit-user-drag: none;
 	}
 
 	.title {

@@ -5,6 +5,8 @@ import { getHighlighter, bundledLanguages } from "shiki";
 import remarkUnwrapImages from "remark-unwrap-images";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
+import { addCopyButton } from "shiki-transformer-copy-button";
+// import { transformerNotationHighlight } from "@shikijs/transformers"
 
 async function highlighter(code, lang = "text") {
 	const highlighter = await getHighlighter({
@@ -14,7 +16,11 @@ async function highlighter(code, lang = "text") {
 	const html = escapeSvelte(
 		highlighter.codeToHtml(code, {
 			lang,
-			theme: "dark-plus"
+			theme: "dark-plus",
+			transformers: [
+				addCopyButton(code),
+				// transformerNotationHighlight()
+			]
 		})
 	);
 	return `{@html \`${html}\`}`;

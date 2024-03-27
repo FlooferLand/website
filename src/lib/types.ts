@@ -7,6 +7,7 @@ export type Post = {
 	category: Category;
 	published: boolean;
 
+	thumbnail: string;
 	slug: string;
 };
 

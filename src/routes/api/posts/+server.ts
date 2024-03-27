@@ -17,6 +17,7 @@ async function getPosts() {
 	for (const path in paths) {
 		const file: BlobFile = paths[path] as BlobFile;
 		const slug = path.split("/").at(-2);
+		const thumbnail = `/src/posts/${slug}/thumbnail.webp`;
 
 		const fileExists = file && typeof file === "object";
 		const slugExists = slug != undefined && typeof slug === "string";
@@ -26,7 +27,7 @@ async function getPosts() {
 
 		if (fileExists && fileHasMetadata && slugExists) {
 			const metadata = file.metadata as Omit<Post, "slug">;
-			const post = { ...metadata, slug } satisfies Post;
+			const post = { ...metadata, slug, thumbnail } satisfies Post;
 			post.published && posts.push(post);
 		} else {
 			let stringChecks: string = "";

@@ -13,4 +13,6 @@ published: true
 
 ```cs
 Console.WriteLine("Teehee");
+var hohohoho = 123;  // [!code highlight]
+int four = 4;
 ```

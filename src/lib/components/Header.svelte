@@ -8,7 +8,7 @@
 <main>
 	<nav>
 		<a href="/" class="logo">
-			<b>Floof's Fluffy Blog</b>
+			<h4>Floof's Fluffy Blog</h4>
 		</a>
 
 		<ul class="links">
@@ -22,6 +22,10 @@
 </main>
 
 <style>
+	.logo {
+		color: var(--primary);
+	}
+
 	nav {
 		padding-block: var(--size-6);
 	}
