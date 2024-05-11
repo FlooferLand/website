@@ -10,8 +10,12 @@
 	--surface-4: var(--gray-9);
 	--border: var(--gray-9);
 	--background: #111;  // Fuck VSCode and its broken SCSS intellisense
-	--wallpaper: url($lib/dkmode-wallpaper.jpg);
+	--wallpaper: url($lib/assets/dkmode-wallpaper.jpg);
 	--font-weight: 300;
+
+	hr {
+		color: white !important;
+	}
 }
 
 @media (prefers-color-scheme: dark) {

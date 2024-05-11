@@ -1,15 +1,15 @@
 import * as config from "$lib/config";
 import type { Post } from "$lib/types";
 import { formatDate } from "$lib/utils";
+import { getPosts } from "$lib/posts";
 
 export async function rssGet(hostUrl: string, slug: string | undefined) : Promise<Response> {
-	const response = await fetch("api/posts");
-	const allPosts: Post[] = await response.json();
+	const allPosts: Post[] = await getPosts();
 
 	// Formatting the posts
 	let rssPosts: string = "";
 	allPosts.forEach((post) => {
-		if (slug == undefined || post.category.toLowerCase() == slug.toLowerCase()) {
+		if (slug == undefined || post.metadata.category.toLowerCase() == slug.toLowerCase()) {
 			rssPosts += makePost(post, hostUrl) + '\n';
 		}
 	});
@@ -36,11 +36,11 @@ export async function rssGet(hostUrl: string, slug: string | undefined) : Promis
 const makePost = (post: Post, hostUrl: string) =>
 	`
 		<item>
-			<title>${post.title}</title>
-			<description>${post.desc}</description>
+			<title>${post.metadata.title}</title>
+			<description>${post.metadata.desc}</description>
 			<link>${hostUrl}/${post.slug}</link>
 			<guid isPermaLink="true">${hostUrl}/${post.slug}</guid>
-			<pubDate>${new Date(formatDate(post.date)).toUTCString()
+			<pubDate>${new Date(formatDate(post.metadata.date)).toUTCString()
 				.replaceAll(" 22:00:00 GMT", "")}</pubDate>
 		</item>
 	`

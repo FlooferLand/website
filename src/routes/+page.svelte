@@ -1,16 +1,21 @@
 <script lang="ts">
 	import { formatDate } from "$lib/utils.js";
+	import { onMount } from "svelte";
 	export let data;
+	onMount(() => {
+		// TODO: Let the user pick the sorting of the
+		// data.posts.sort((a, b) => a.date);
+	})
 </script>
 
 <section>
 	<ul class="posts">
 		{#each data.posts as post}
 			<li class="post">
-				<img class="thumbnail" src={post.thumbnail} alt="thumbnail" />
-				<a class="title" href={"/post/" + post.slug}>{post.title}</a>
-				<p class="date">{formatDate(post.date)}</p>
-				<p class="desc">{post.desc}</p>
+				<img class="thumbnail" src={post.thumbnailPath} alt="thumbnail" />
+				<a class="title" href={"/post/" + post.slug}>{post.metadata.title}</a>
+				<p class="date">{formatDate(post.metadata.date)}</p>
+				<p class="desc">{post.metadata.desc}</p>
 			</li>
 		{/each}
 	</ul>

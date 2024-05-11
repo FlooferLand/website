@@ -1,23 +1,16 @@
 export type Category = "None" | "Programming" | "Mental health";
 
-export type Post = {
+export type PostMetadata = {
 	title: string;
 	desc: string;
-	date: string;
+	date: Date;
 	category: Category;
 	published: boolean;
-
-	thumbnail: string;
-	slug: string;
-};
-
-export function isValidMetadata(obj: object): boolean {
-	return (
-		obj &&
-		"title" in obj &&
-		"desc" in obj &&
-		"date" in obj &&
-		"category" in obj &&
-		"published" in obj
-	);
 }
+
+export type Post = {
+	metadata: PostMetadata,
+	
+	slug: string;
+	thumbnailPath: string;
+};

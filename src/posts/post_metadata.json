@@ -1,0 +1,57 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "post_metadata",
+    "title": "post_metadata",
+    "description": "The schema used for all the posts on this site.",
+    "type": "object",
+    "default": {},
+    "required": [
+        "title",
+        "desc",
+        "date",
+        "category"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "title": {
+            "title": "The title Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "type": "string"
+        },
+        "desc": {
+            "description": "The description of the post",
+            "type": "string"
+        },
+        "date": {
+            "description": "The date the post released on",
+            "type": "string",
+            "pattern": "([0-3][0-9])\/([0-1][1-9])\/(20[0-9][0-9])"
+        },
+        "category": {
+            "description": "The category of the blog",
+            "type": "string",
+            "enum": [
+                "programming",
+                "life"
+            ]
+        },
+        "keywords": {
+            "description": "The keywords assigned to this blog",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+                "type": "string",
+                "enum": [
+                    "discord",
+                    "relationships",
+                    "rust-lang"
+                ]
+            }
+        },
+        "published": {
+            "description": "Whenever the blog is visible or not",
+            "type": "boolean",
+            "default": true
+        }
+    }
+}

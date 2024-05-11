@@ -32,7 +32,8 @@ html, body {
 html {
 	color: var(--text-1);
 	accent-color: var(--link);
-	background: var(--wallpaper) no-repeat center/110% fixed;
+	background-color: --background;
+	// background: var(--wallpaper) no-repeat center/110% fixed;
 }
 
 img {
@@ -46,6 +47,10 @@ ul, ol {
 
 li {
 	padding-inline-start: 0;
+}
+
+hr, ul, ol, li {
+	color: var(--text-1);
 }
 
 .surface-1 {
