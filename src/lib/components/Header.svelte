@@ -1,19 +1,19 @@
 <!-- The header for every single page -->
 
-<script lang="ts">
-	import { NavLink } from "$lib/components";
-	import ThemeToggle from "./ThemeToggle.svelte";
-</script>
-
 <main>
 	<nav>
-		<a href="/" class="logo">
-			<h4>Floof's Fluffy Blog</h4>
+		<a href="/">
+			<h4 class="logo" style={`--background-style: ${backgroundStyle}`}>
+				Floof's Fluffy /{route}/
+			</h4>
 		</a>
 
 		<ul class="links">
-			<NavLink route="/about" text="About me" />
-			<NavLink route="/rss" text="RSS feed" />
+			<NavLink route="/blog/" text="blog" />
+			<NavLink route="/wiki/" text="wiki" />
+			<NavLink route="/util/" text="utility" />
+			<VerticalRule />
+			<NavLink route="/contact/" text="contact me" />
 		</ul>
 
 		<ThemeToggle />
@@ -21,39 +21,85 @@
 	<hr />
 </main>
 
-<style>
+<script lang="ts">
+    import { page } from "$app/stores";
+	import { NavLink } from "$lib/components";
+	import ThemeToggle from "./ThemeToggle.svelte";
+	import VerticalRule from "./VerticalRule.svelte";
+
+	let route: string = ($page.route.id ?? "")
+		.replace('/', '')
+		.split("/")
+		.map(a => a.trim())
+		.filter(a => a.length > 0)
+		.at(0) ?? "site";
+	let colors: string[];
+	switch (route) {
+		case "":
+			colors = ["var(--primary)", "var(--secondary)"];
+			break;
+		case "blog":
+			colors = ["var(--secondary)", "var(--primary)"];
+			break;
+		case "wiki":
+			colors = ["red", "cyan"];
+			break;
+		case "utility":
+			colors = ["cyan", "gray"];
+			break;
+		default:
+			colors = ["var(--secondary)", "var(--secondary)"];
+			break;
+	}
+	let backgroundStyle = `linear-gradient(to left, ${colors[0]}, ${colors[1]})`
+</script>
+
+<style lang="scss">
+	@use "$lib/styles/variables.scss";
+
 	.logo {
-		color: var(--primary);
+		background: var(--background-style);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: saturate(0%);
+		padding: 0;
+		margin: 0;
+		&:hover {
+			background: var(--background-style);
+			filter: saturate(100%);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
 	}
 
 	nav {
-		padding-block: var(--size-6);
+		padding-inline: var(--size-4);
 	}
 
-	hr {
-		padding: 0%;
-		margin: 0%;
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
 	}
 
-	.links {
-		margin-block: var(--size-6);
-	}
-
-	a {
-		color: inherit;
-		text-decoration: none;
-	}
-
-	@media (min-width: 1024px) {
+	@media (min-width: variables.$mobile-transition-width) {
 		nav {
 			display: flex;
 			justify-content: space-between;
 		}
-
+	
 		.links {
 			display: flex;
-			gap: var(--size-6);
+			gap: var(--size-4);
 			margin-block: 0;
+		}
+	}
+	
+	@media (max-width: variables.$mobile-transition-width) {
+		ul, a {
+			align-items: center;
+			align-self: center;
+			align-content: center;
 		}
 	}
 </style>

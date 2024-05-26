@@ -1,8 +1,13 @@
 @mixin dark-theme {
 	color-scheme: dark;
 	--primary: #954fff;
+	--secondary: #86cc37;
+	--separator: #fff;  // Separates things from the background depending on the theme
 	--text-1: #ffffff;
 	--text-2: #f6c8ff;
+	--info: var(--text-1);
+	--error: #ff2200;
+	--warning: #ff9900;
 	--link: rgb(205, 126, 255);
 	--surface-1: var(--gray-12);
 	--surface-2: var(--gray-11);

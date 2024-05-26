@@ -1,18 +1,41 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
+import { sveltekit } from "@sveltejs/kit/vite";
+import { defineConfig } from "vite";
 import path from "path";
-import { postsPath } from '$lib/config';
+import { postsPath } from "./src/lib/config";
+import { enhancedImages } from "@sveltejs/enhanced-img";
 
+// Asset locations
+const rootFolder = __dirname
+const assetsFolder = path.resolve(rootFolder)
+const postsFolder = path.resolve(rootFolder, postsPath);
+//const libFolder = path.resolve(rootFolder, "./src/lib")
+
+// Config
 export default defineConfig({
-	plugins: [sveltekit()],
+	plugins: [
+		sveltekit(),
+		enhancedImages(),
+	],
 	resolve: {
 		alias: {
-			"##posts": path.resolve(__dirname, postsPath)
+			"$assets": assetsFolder,
+			"@posts": postsFolder,
 		}
 	},
 	assetsInclude: [
-		// "**/*.yml"
-	]
+		"**/*.yml"
+	],
+	server: {
+		fs: {
+			allow: [
+				assetsFolder
+			]
+		}
+	},
+	build: {
+		minify: false,
+		cssMinify: false,
+	}
 	// test: {
 	// 	include: ["src/**/*.{test,spec}.{js,ts}"]
 	// }

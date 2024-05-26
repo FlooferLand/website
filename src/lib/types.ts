@@ -1,10 +1,11 @@
-export type Category = "None" | "Programming" | "Mental health";
+import type { PostCategory } from "./generated/types";
 
 export type PostMetadata = {
 	title: string;
 	desc: string;
 	date: Date;
-	category: Category;
+	category: PostCategory;
+	tags: Array<string>;
 	published: boolean;
 }
 

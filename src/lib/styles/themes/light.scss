@@ -1,6 +1,8 @@
 @mixin light-theme {
 	color-scheme: light;
 	--primary: #6d3ab9;
+	--secondary: #86cc37;
+	--separator: #000;  // Separates things from the background depending on the theme
 	--text-1: #000000;
 	--text-2: #1b161c;
 	--link: rgb(98, 55, 124);

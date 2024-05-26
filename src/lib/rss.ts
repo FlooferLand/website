@@ -4,7 +4,7 @@ import { formatDate } from "$lib/utils";
 import { getPosts } from "$lib/posts";
 
 export async function rssGet(hostUrl: string, slug: string | undefined) : Promise<Response> {
-	const allPosts: Post[] = await getPosts();
+	const allPosts: Post[] = getPosts();
 
 	// Formatting the posts
 	let rssPosts: string = "";
@@ -15,15 +15,17 @@ export async function rssGet(hostUrl: string, slug: string | undefined) : Promis
 	});
 
 	// Formatting everything
+	const title = config.title + (slug ? `@ ${slug}` : "");
+	const description = config.desc + (slug ? `(${slug} category)` : "");
 	const xml = `
 		<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
 			<channel>
-				<title>${config.title}</title>
-				<description>${config.desc}</description>
+				<title>${title}</title>
+				<description>${description}</description>
 				<link>${hostUrl}</link>
 				<atom:link href="${hostUrl}/rss.xml" rel="self" type="application/rss+xml"/>
 				<language>en-us</language>
-				<generator>Svelte server 'src/routes/rss.xml/+server.ts'</generator>
+				<generator>Svelte server</generator>
 				${rssPosts}
 			</channel>
 		</rss>
@@ -39,7 +41,7 @@ const makePost = (post: Post, hostUrl: string) =>
 			<title>${post.metadata.title}</title>
 			<description>${post.metadata.desc}</description>
 			<link>${hostUrl}/${post.slug}</link>
-			<guid isPermaLink="true">${hostUrl}/${post.slug}</guid>
+			<guid isPermaLink="true">${config.getPostUrl({ hostUrl, slug: post.slug })}</guid>
 			<pubDate>${new Date(formatDate(post.metadata.date)).toUTCString()
 				.replaceAll(" 22:00:00 GMT", "")}</pubDate>
 		</item>

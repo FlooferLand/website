@@ -1,0 +1,54 @@
+# https://regexr.com
+# https://regex101.com
+
+# Rules:
+# - Uses Regex for keys
+# - Any top-level key is a category
+# - Definitions are strings as well as arrays. When a definition is an array its split into several lines
+# - Keys that match the same regex will get merged, showing both definitions when hovering over an item
+#   Similar to that last point, if there are several definitions under the same regex/block, it also shows all definitions
+
+- social media:
+    /discord/gi:
+        def: Chatting platform for normies
+        src: https://discord.com
+
+    /twitter/gi:
+        def: The bird platform where the filthiest members of the internet lie
+            - It's called "X" if you're an Elon Musk fart smella
+        src: https://discord.com//youtu.be/3h0AkeaFvXk
+
+- lgbtqstfu:
+    /ace/gi:
+        def: Stands for asexual; a person who doesn't really feel any sexual attraction
+    /aro/gi:
+        def: Stands for aromatic; a person who doesn't feel any romantic attraction
+
+- for boomers:
+    /OP/g:
+        - def: \"Over-powered\", most comonly used in games
+        - def: \"Original poster\", used on platforms like Reddit
+    /sus/gi:
+        - def: Stands for "suspicious". "sussy wussy" even.
+
+- silly:
+    /9\d.(\d+)%/g:
+        def: This probably means I'm saying something like "I'm 99.99999% sure" again
+    /bitchless/gi:
+        def: One who gets no maidens, no bitches, and absolutely no rizz
+    /among us|amongus|amogus/gi:
+        def: Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth
+
+- other:
+    /skinwalker/gi:
+        src: https://en.wikipedia.org/wiki/Skin-walker
+
+- violently vomiting:
+    /doom-scroller|doomscroller/gi:
+        def: Someone who spends 12 hours of the 15 hours they spend awake scrolling through Twitter, Tik Tok,
+             or another filthy social media.
+    /MAP|M.A.P/g:
+        def: Stands for "Minor Attracted People"
+            - This is the name pedophiles give themselves on Twitter in order to
+              try and sound like they're normal
+            - I dislike the fact I am typing the definition for this

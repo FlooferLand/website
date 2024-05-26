@@ -4,8 +4,43 @@ import path from "path";
 import fs from "fs";
 import yaml from "yaml";
 
+// Types & variables
+interface BlogPosts {
+	[slug: string]: Post;
+}
+export let cachedBlogPosts: BlogPosts = {};
+export const categoriesArray = [
+	"programming",
+    "life",
+    "discord",
+    "relationships",
+    "rustlang",
+	"tutorial"
+];
+export const tagsArray = categoriesArray;
+
+// Caching replacement functions
+// TODO: Make getPosts() return {BlogPosts} instead of Post[]
+//       Sorting should maybe be done client-side
+export function getPost(slug: string) : Post {
+	return cachedBlogPosts[slug];
+}
+export function getPosts() : Post[] {
+	const posts = Object.values(cachedBlogPosts);
+	posts.sort(
+		(first, second) =>
+			second.metadata.date.getTime() - first.metadata.date.getTime()
+	);
+	return posts;
+}
+
+/** Server-side. Uses FS to initialize the cache for all posts */
+export async function initializeCache() {
+	cachedBlogPosts = await internalGetPosts();
+}
+
 /** Server-side. Uses FS to get a post */
-export async function getPost(slug: string) : Promise<Post> {
+async function internalGetPost(slug: string) : Promise<Post> {
 	// Paths
 	const metadataPath  = `${postsPath}/${slug}/metadata.yml`;
 	const thumbnailPath = `${postsPath}/${slug}/thumbnail.webp`;
@@ -23,8 +58,13 @@ export async function getPost(slug: string) : Promise<Post> {
 		
 		// Defaults and such
 		const metadata: PostMetadata = parsedMetadata satisfies PostMetadata;
+		const [day, month, year] = parsedMetadata.date.split(/\/|-/g);
+		metadata.date = new Date(year, month - 1, day);
 		if (metadata.published == undefined) {
-			metadata.published = true;
+			metadata.published = false;
+		}
+		if (metadata.tags == undefined) {
+			metadata.tags = [];
 		}
 
 		return metadata;
@@ -35,8 +75,8 @@ export async function getPost(slug: string) : Promise<Post> {
 }
 
 /** Server-side. Uses FS to get the posts */
-export async function getPosts() : Promise<Post[]> {
-	const posts: Post[] = [];
+async function internalGetPosts() : Promise<BlogPosts> {
+	const posts: BlogPosts = {};
 
 	const folders: string[] = fs.readdirSync(postsPath);
 	for (const folder of folders) {
@@ -46,13 +86,11 @@ export async function getPosts() : Promise<Post[]> {
         // Finding the post's directory
 		if (folderStats.isDirectory()) {
 			const slug = folder
-			const post = await getPost(slug);
+			const post = await internalGetPost(slug);
 			if (post.metadata.published)
-				posts.push(post);
+				posts[slug] = post;
 		}
 	}
-
-	posts.sort((first, second) => new Date(second.metadata.date).getTime() - new Date(first.metadata.date).getTime());
 	
 	return posts;
 }

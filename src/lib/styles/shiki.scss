@@ -1,3 +1,5 @@
+// Styles for code blocks on my site
+
 pre:has(code) {
 	position: relative;
 }
@@ -17,11 +19,11 @@ pre button.copy {
 		background-size: cover;
    }
 	& .ready {
-		background-image: url(/icons/copy-to-clipboard.png);
+		background-image: url("$assets/icons/copy-to-clipboard.png");
    }
 	& .success {
 		display: none;
-		background-image: url(/icons/checkmark.png);
+		background-image: url("$assets/icons/checkmark.png");
    }
 	&.copied {
 		& .success {
@@ -31,4 +33,10 @@ pre button.copy {
 			display: none;
 	   }
    }
+}
+
+span.line.line-highlight {
+	// background-color: darkslategray;
+	padding: 0px 2.5px 0px 5px;
+	border: solid 2px darkslategray;
 }

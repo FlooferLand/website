@@ -3,38 +3,40 @@
 	import "open-props/normalize";
 	import "open-props/buttons";
 
-	// Not sure what these do but they sound cool!
-	// import "open-props/media";
-	// import "open-props/camo";
-
 	// Components
 	import { Header, Footer } from "$lib/components";
 	import "$lib/styles/app.scss";
+    import BannerNotice from "$lib/components/BannerNotice.svelte";
 </script>
 
 <div class="layout">
 	<Header />
 	<main>
+		<BannerNotice type="warning">
+			This website is still a work in progress.
+			Do not bookmark pages for now, as the URLs might change
+		</BannerNotice>
 		<slot />
 	</main>
 	<Footer />
 </div>
 
-<style>
+<style lang="scss">
+	@use "$lib/styles/variables.scss";
+
 	.layout {
+		width: 100%;
 		height: 100%;
-		max-inline-size: 1440px;
 		display: grid;
 		grid-template-rows: auto 1fr auto;
-		margin-inline: auto;
-		padding-inline: var(--size-6);
+		padding: var(--size-4);
 	}
 
 	main {
-		padding-block: var(--size-8);
+		padding-inline: var(--size-2);
 	}
 
-	@media (min-width: 1440px) {
+	@media (min-width: variables.$mobile-transition-width) {
 		.layout {
 			padding-inline: 0;
 		}

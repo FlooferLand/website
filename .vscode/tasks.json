@@ -2,15 +2,27 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "bun: dev",
 			"type": "bun",
 			"script": "vite dev",
 			"problemMatcher": [],
-			"label": "bun: dev",
 			"detail": "bun run vite dev - package.json",
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			}
+		},
+		{
+			"label": "make post schema",
+			"type": "shell",
+			"command": "bun run ./scripts/make_post_schema.ts",
+			"problemMatcher": [],
+		},
+		{
+			"label": "generate types",
+			"type": "shell",
+			"command": "bun run ./scripts/generate_types.ts",
+			"problemMatcher": [],
 		}
 	]
 }
