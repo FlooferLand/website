@@ -64,6 +64,7 @@ li, ul {
 
 select {
 	cursor: pointer;
+	background-color: var(--surface-3);
 }
 
 label {
@@ -122,4 +123,14 @@ hr {
 .surface-4 {
 	background-color: var(--surface-4);
 	color: var(--text-1);
+}
+
+.social-button {
+	background-color: color-mix(in srgb, var(--surface-4) 50%, transparent);
+	padding: 5pt;
+	margin: 5pt;
+	box-shadow: 0 0 8pt color-mix(in srgb, var(--separated) 20%, transparent);
+	&:hover {
+		background-color: color-mix(in srgb, var(--surface-4) 100%, transparent);
+	}
 }

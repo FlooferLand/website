@@ -5,6 +5,9 @@
 	--separator: #000;  // Separates things from the background depending on the theme
 	--text-1: #000000;
 	--text-2: #1b161c;
+	--info: var(--text-1);
+	--error: #ff2200;
+	--warning: #ff9900;
 	--link: rgb(98, 55, 124);
 	--surface-1: var(--gray-0);
 	--surface-2: var(--gray-1);

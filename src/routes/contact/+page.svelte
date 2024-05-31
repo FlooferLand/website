@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { contactEmail } from "$lib/aboutme";
-    import type { ActionData, PageServerData } from "./$types";
+    import { unsafeSocialAccounts } from "$lib/aboutme";
+    import type { ActionData } from "./$types";
 
 	export let form: ActionData;
     export let data;
@@ -10,7 +10,7 @@
 <div class="contact-section">
     <h3>Public socials</h3>
     <ul>
-        {@html data.htmlStuff}
+        {@html data.publicHtml}
     </ul>
 </div>
 
@@ -28,15 +28,11 @@
         <button formaction="?/verify">Verify</button>
     </form>
 
-    <br/>
-
     {#if form?.success}
         <div>    
             <h3>Here we go!</h3>
             <ul>
-                <li>
-                    <p>My email is <a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
-                </li>
+                {@html form?.accountsHtml}
             </ul>
         </div>
     {:else if form?.error}

@@ -58,7 +58,8 @@
 	@use "$lib/styles/variables.scss";
 
 	.logo {
-		background: var(--background-style);
+		color: var(--text-1);
+		background: var(--text-1);
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		filter: saturate(0%);

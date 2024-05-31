@@ -1,37 +1,15 @@
-import { socialAccounts } from "$lib/aboutme";
+import { socialAccounts, unsafeSocialAccounts } from "$lib/aboutme";
 import { yummyWords } from "$lib/data";
+import { buildSocialAccountHtml } from "$lib/utils";
 import type { Actions } from "@sveltejs/kit";
 
 export function load() {
-    let htmlStuff = "";
-    buildHtml(socialAccounts);
-    
-    function buildHtml(obj: object, topKey?: string) {
-        const keys = Object.keys(obj) as (keyof typeof obj)[];
-        const values = Object.values(obj);
-        for (const [i, key] of keys.entries()) {
-            let value = values[i];
-            if (value == undefined) continue;
-            if (typeof(value) == "object" && Object.keys(value).length > 0) {
-                htmlStuff += "<li>\n";
-                buildHtml(value, key);
-                htmlStuff += "\n</li>\n"
-            } else if (typeof(value) == "string") {
-                const name: string = (topKey ? `${topKey} ` : "") + (topKey ? `(${key})` : key);
-                htmlStuff += `\t
-                    <li><p>
-                        ${name}: <a href=${value}>${value}</a>
-                    </p></li>` + '\n'
-            }
-        }
-    }
-
     return {
-        htmlStuff
+        publicHtml: buildSocialAccountHtml(socialAccounts)
     }
 }
 
-type VerifyReturnType = { success: boolean, error?: Array<string> }
+type VerifyReturnType = { success: boolean, error?: Array<string>, accountsHtml?: string };
 export const actions: Actions = {
     verify: async ({ request }) : Promise<VerifyReturnType> => {
         const form = await request.formData();
@@ -41,7 +19,10 @@ export const actions: Actions = {
         const inputText = input.toLowerCase().trim();
 
         if (yummyWords.includes(inputText)) {
-            return { success: true };
+            return {
+                success: true,
+                accountsHtml: buildSocialAccountHtml(unsafeSocialAccounts)
+            };
         }
         return {
             success: false,

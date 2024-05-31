@@ -1,7 +1,7 @@
 <!-- The footer for every single page -->
 
 <script lang="ts">
-	import { getGithubRepoLink, socialAccounts } from "$lib/aboutme";
+	import { getGithubRepoLink } from "$lib/aboutme";
     import Link from "./Link.svelte";
 </script>
 

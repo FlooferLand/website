@@ -33,7 +33,7 @@
         background-color: var(--surface-1);
     }
     .warning {
-        color: var(--surface-1);
+        color: rgb(0, 0, 0);
         background-color: var(--warning);
     }
     .error {

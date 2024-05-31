@@ -1,5 +1,4 @@
-export const contactEmail = "yunaflarf.contact@gmail.com";
-export const socialAccounts: Record<string, string|object> = {
+export const socialAccounts = {
     github: "https://github.com/FlooferLand",
     twitter: "https://twitter.com/FlooferLand",
     youtube: {
@@ -7,11 +6,22 @@ export const socialAccounts: Record<string, string|object> = {
         music: "https://youtube.com/@Mawqueel",
         animation: "https://youtube.com/@FlooferLandAnimations",
         gameDev: "https://youtube.com/@FlooferLandGames",
-    },
-    discord: {}
+    }
+}
+export const unsafeSocialAccounts = {
+    phoneNumber: {},  // TODO: Check if the rickroll phone number from Reddit still works (778-330-2389)
+    discord: {},
+    contactEmail: "yunaflarf.contact@gmail.com"
+}
+
+/** Not of use for contacting; use the contact email instead! */
+/** I need to store these to use some services like Gravatar on here */
+export const privateEmails = {
+    primary:   "yunaflarf@gmail.com",
+    secondary: "yunaflarf2@gmail.com"
 }
 
 export function getGithubRepoLink(): string {
-    return "https://github.com/FlooferLand/website";
+    return `${socialAccounts.github}/website`;
 }
 
