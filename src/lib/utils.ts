@@ -1,3 +1,5 @@
+import { goto } from "$app/navigation";
+
 type DateStyle = Intl.DateTimeFormatOptions["dateStyle"];
 
 export function formatDate(date: Date, dateStyle: DateStyle = "medium", locales = "en") {
@@ -39,9 +41,11 @@ export function buildSocialAccountHtml(obj: object, topKey?: string, htmlStuff =
 			htmlStuff += "\n</li>\n"
 		} else if (typeof(value) == "string") {
 			const name: string = camelCaseToWordCase((topKey ? `${topKey} ` : "") + (topKey ? `(${key})` : key));
+			const isMail = value.includes("gmail") || value.includes("proton");
+			const valuePrefix = isMail ? "mailto:" : ""
 			htmlStuff += `\t
 				<li><p>
-					${name}: <a href=${value}>${value}</a>
+					${name}: <a href=${valuePrefix+value}>${value}</a>
 				</p></li>` + '\n'
 		}
 	}
@@ -71,4 +75,29 @@ export function unpackObject(obj: object, result: ObjectUnpackType = [], topKey?
 		}
 	}
 	return result;
+}
+
+/** Uses Simple Icons to get the icon for a domain name */
+export function getSimpleIconForDomain(domain: string) {
+	const url = new URL(domain);
+	const points = url.hostname.split('.');
+
+	const hasSubdomain = points.length >= 3
+	const domainName = (!hasSubdomain) ? points[0] : points[1]
+	const domainEnd = (!hasSubdomain) ? points[1] : points[2]
+
+	const hostname = `${domainName}.${domainEnd}`;
+	switch (hostname) {
+		case "itch.io":
+			return "itchdotio";
+		case "twitter.com":
+			return "x";
+		default:
+			return domainName;
+	}
+}
+
+export function refreshPage() {
+	const current = window.location.pathname;
+	goto('/#').then(() => goto(current));
 }

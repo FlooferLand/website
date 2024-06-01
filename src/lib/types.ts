@@ -15,3 +15,4 @@ export type Post = {
 	slug: string;
 	thumbnailPath: string;
 };
+

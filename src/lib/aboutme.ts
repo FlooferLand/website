@@ -6,7 +6,9 @@ export const socialAccounts = {
         music: "https://youtube.com/@Mawqueel",
         animation: "https://youtube.com/@FlooferLandAnimations",
         gameDev: "https://youtube.com/@FlooferLandGames",
-    }
+    },
+    gamejolt: "https://gamejolt.com/@FlooferLand",
+    itchIo: "https://flooferland.itch.io"
 }
 export const unsafeSocialAccounts = {
     phoneNumber: {},  // TODO: Check if the rickroll phone number from Reddit still works (778-330-2389)

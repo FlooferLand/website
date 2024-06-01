@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { unsafeSocialAccounts } from "$lib/aboutme";
     import type { ActionData } from "./$types";
 
 	export let form: ActionData;

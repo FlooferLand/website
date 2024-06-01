@@ -5,9 +5,16 @@
 	--separator: #fff;  // Separates things from the background depending on the theme
 	--text-1: #ffffff;
 	--text-2: #f6c8ff;
-	--info: var(--text-1);
+
+	// Generic
 	--error: #ff2200;
 	--warning: #ff9900;
+
+	// Banner popup stuff
+	--info-bg: #333;
+	--error-bg: #ff2200;
+	--warning-bg: #ff9900;
+
 	--link: rgb(205, 126, 255);
 	--surface-1: var(--gray-12);
 	--surface-2: var(--gray-11);
@@ -15,7 +22,7 @@
 	--surface-4: var(--gray-9);
 	--border: var(--gray-9);
 	--background: #111;  // Fuck VSCode and its broken SCSS intellisense
-	--wallpaper: url($lib/assets/dkmode-wallpaper.jpg);
+	--wallpaper: url("$assets/dkmode-wallpaper.jpg");
 	--font-weight: 300;
 
 	hr {

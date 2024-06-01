@@ -1,7 +1,7 @@
 // #!/bin/bun
 
 import { $ } from "bun";
-import { categoriesArray } from "../src/lib/posts";
+import { postCategories } from "../src/lib/posts";
 import path from "path";
 
 const fileName = "post_metadata.json";
@@ -38,7 +38,7 @@ const template = {
         category: {
             description: "The category of the blog",
             type: "string",
-            enum: categoriesArray
+            enum: postCategories
         },
         keywords: {
             description: "The keywords assigned to this blog",
@@ -46,7 +46,7 @@ const template = {
             maxItems: 10,
             items: {
                 type: "string",
-                enum: categoriesArray
+                enum: postCategories
             }
         },
         published: {

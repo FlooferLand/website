@@ -14,14 +14,14 @@
 		},
 		{
 			"label": "make post schema",
-			"type": "shell",
-			"command": "bun run ./scripts/make_post_schema.ts",
+			"type": "bun",
+			"script": "run ./scripts/make_post_schema.ts",
 			"problemMatcher": [],
 		},
 		{
-			"label": "generate types",
-			"type": "shell",
-			"command": "bun run ./scripts/generate_types.ts",
+			"label": "generate code",
+			"type": "bun",
+			"script": "run ./scripts/generate_code.ts",
 			"problemMatcher": [],
 		}
 	]

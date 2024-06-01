@@ -109,9 +109,7 @@ export const getMdsvexOptions = (trustworthy = false, darkTheme = true) => {
 			highlighter: (code, lang) => shikiCodeHighlighter(code, lang, darkTheme),
 			// Language aliases can be set up here!
 		},
-		layout: {
-			_: "./src/mdsvex.svelte"
-		},
+		layout: { _: "./src/mdsvex.svelte" },
 		remarkPlugins: [
 			remarkHeaderMagic,
 			remarkUnwrapImages,

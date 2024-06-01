@@ -3,7 +3,7 @@
     import VerticalRule from "$lib/components/VerticalRule.svelte";
     import { getPostUrl } from "$lib/config";
     import type { PostCategory, PostTag } from "$lib/generated/types.js";
-    import { categoriesArray, tagsArray } from "$lib/posts";
+    import { postCategories, postTags } from "$lib/posts";
     import type { Post } from "$lib/types.js";
 	import { capitalizeString, formatDate } from "$lib/utils";
 	import { onMount } from "svelte";
@@ -73,7 +73,7 @@
 				on:change={resort}
 			>
 				<option value={undefined}>All</option>
-				{#each categoriesArray as category}
+				{#each postCategories as category}
 					<option value={category}>{capitalizeString(category)}</option>
 				{/each}
 			</select>
@@ -89,7 +89,7 @@
 				on:change={resort}
 			>
 				<option value="" on:submit={() => filter.tags = []}>None</option>
-				{#each tagsArray as tag}
+				{#each postTags as tag}
 					<option value={tag}>{capitalizeString(tag)}</option>
 				{/each}
 			</select>

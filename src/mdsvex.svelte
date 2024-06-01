@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
 	import { img } from "$lib/components";
-	export { img };
+    import CharEmoji from "$lib/components/CharEmoji.svelte";
+	export { img, CharEmoji };
 </script>
 
-<main>
-	<slot />
-</main>
+<p>test</p>
+<slot />

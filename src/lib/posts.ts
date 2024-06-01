@@ -9,15 +9,16 @@ interface BlogPosts {
 	[slug: string]: Post;
 }
 export let cachedBlogPosts: BlogPosts = {};
-export const categoriesArray = [
+export const postCategories = [
 	"programming",
     "life",
     "discord",
     "relationships",
     "rustlang",
-	"tutorial"
+	"tutorial",
+	"misc"
 ];
-export const tagsArray = categoriesArray;
+export const postTags = postCategories;
 
 // Caching replacement functions
 // TODO: Make getPosts() return {BlogPosts} instead of Post[]

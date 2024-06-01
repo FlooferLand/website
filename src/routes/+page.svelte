@@ -1,7 +1,7 @@
 <script lang="ts">
     import { socialAccounts } from "$lib/aboutme";
-    import LucideIcon from "$lib/components/LucideIcon.svelte";
-    import { unpackObject, camelCaseToWordCase, capitalizeString } from "$lib/utils";
+    import BrandIcon from "$lib/components/BrandIcon.svelte";
+    import { unpackObject, camelCaseToWordCase, getSimpleIconForDomain } from "$lib/utils";
 
     export let data;
 </script>
@@ -16,7 +16,7 @@
         <ul>
             {#each unpackObject(socialAccounts) as [keys, value]}
                 <li>
-                    <LucideIcon name={capitalizeString(keys[0])} />
+                    <BrandIcon name={getSimpleIconForDomain(value)} />
                     <a class="social-button" href={value}>
                         {keys.map(a => camelCaseToWordCase(a)).join(" / ")}
                     </a>
@@ -25,6 +25,7 @@
             {/each}
         </ul>
     </div>
+    
 </main>
 
 <style lang="scss">

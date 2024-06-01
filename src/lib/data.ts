@@ -1,5 +1,9 @@
 import fs from "fs";
 import { dataPath } from "./config";
+import type { GamePlatform } from "./generated/types";
+
+// Const
+export const gamePlatforms: Array<GamePlatform> = ["linux", "windows", "darwin", "android", "html"];
 
 // Data (cached/loaded)
 export const yummyWords: Array<string> = loadWorldList("yummy_words.lst");

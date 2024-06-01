@@ -3,4 +3,4 @@
 	export let alt = "";
 </script>
 
-<img {src} {alt} loading="lazy" />
+<img src="content/{src}" {alt} loading="lazy" {...$$props} />

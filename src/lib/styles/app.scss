@@ -54,10 +54,11 @@ sup, sub {
 	font-size: smaller;
 }
 
+pre {
+	cursor: text;
+}
+
 li, ul {
-	::marker {
-		color: red;
-	}
 	padding: 0%;
 	margin: 0%;
 }
@@ -67,20 +68,22 @@ select {
 	background-color: var(--surface-3);
 }
 
+input {
+	cursor: pointer;
+	color: var(--text-1);
+	background-color: var(--surface-2);
+	&[type="text"] {
+		cursor: text;
+		outline: none;
+		:focus {
+			outline: none;
+		}
+	}
+}
+
 label {
 	user-select: none;
 	cursor: default;
-}
-
-.markdown-header {
-	a.header-copy-hash::before {
-		content: '';
-	}
-	&:hover {
-		a.header-copy-hash::before {
-			content: '#';
-		}
-	}
 }
 
 html, body {
@@ -92,7 +95,7 @@ html {
 	color: var(--text-1);
 	accent-color: var(--link);
 	background-color: --background;
-	// background: var(--wallpaper) no-repeat center/110% fixed;
+	background: var(--wallpaper) no-repeat center/110% fixed;
 }
 
 img {
@@ -125,6 +128,17 @@ hr {
 	color: var(--text-1);
 }
 
+.markdown-header {
+	a.header-copy-hash::before {
+		content: '';
+	}
+	&:hover {
+		a.header-copy-hash::before {
+			content: '#';
+		}
+	}
+}
+
 .social-button {
 	background-color: color-mix(in srgb, var(--surface-4) 50%, transparent);
 	padding: 5pt;
@@ -133,4 +147,12 @@ hr {
 	&:hover {
 		background-color: color-mix(in srgb, var(--surface-4) 100%, transparent);
 	}
+}
+
+.emoji {
+	display: inline-block;
+	width: 24pt;
+	user-select: none;
+	-webkit-user-drag: none;
+	-moz-drag-over: none;
 }

@@ -8,13 +8,14 @@
 			</h4>
 		</a>
 
-		<ul class="links">
+		<nav class="links">
 			<NavLink route="/blog/" text="blog" />
 			<NavLink route="/wiki/" text="wiki" />
+			<NavLink route="/games/" text="games" />
 			<NavLink route="/util/" text="utility" />
 			<VerticalRule />
 			<NavLink route="/contact/" text="contact me" />
-		</ul>
+		</nav>
 
 		<ThemeToggle />
 	</nav>
@@ -97,10 +98,11 @@
 	}
 	
 	@media (max-width: variables.$mobile-transition-width) {
-		ul, a {
+		nav * {
 			align-items: center;
 			align-self: center;
 			align-content: center;
+			display: block;
 		}
 	}
 </style>
