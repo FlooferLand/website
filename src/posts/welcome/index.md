@@ -2,13 +2,18 @@
     import CharEmoji from "$lib/components/CharEmoji.svelte";
 </script>
 
-I've been working on this blog for what feels like days now
+I've been working on this website for weeks now
 and it's been by far one of the most time-consuming projects I've ever worked on.
 
 I used to have another website (https://flooferland.neocities.org/) but then I wanted to start a blog
 and doing an entire blog website on Neocities in a convenient way wouldn't be that fun.
 
 So I made this! A brand new website, combining all sorts of things from all my other websites into one site.
+
+## Design
+I'm trying to go for a 2000s frutiger aero design for this website, think of stuff like Windows 7.
+Currently still quite rough, not sure what to do with the background.
+I'd add a comment section for feedback, but thats for future me to add xD
 
 ## The technical stuff
 ![explorer.png](./content/explorer.png)

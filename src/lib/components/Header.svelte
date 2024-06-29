@@ -4,7 +4,7 @@
 	<nav>
 		<a href="/">
 			<h4 class="logo" style={`--background-style: ${backgroundStyle}`}>
-				Floof's Fluffy /{route}/
+				🦇 Floof's Fluffy /{route}/
 			</h4>
 		</a>
 
@@ -20,11 +20,14 @@
 		<ThemeToggle />
 	</nav>
 	<hr />
+	<!--MusicPlayer />
+	<hr /-->
 </main>
 
 <script lang="ts">
     import { page } from "$app/stores";
 	import { NavLink } from "$lib/components";
+    import MusicPlayer from "./MusicPlayer.svelte";
 	import ThemeToggle from "./ThemeToggle.svelte";
 	import VerticalRule from "./VerticalRule.svelte";
 

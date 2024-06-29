@@ -4,5 +4,5 @@
 	export { img, CharEmoji };
 </script>
 
-<p>test</p>
+<!--p>test</p-->
 <slot />

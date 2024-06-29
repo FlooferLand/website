@@ -1,5 +1,7 @@
 <script lang="ts">
     import { getGithubRepoLink } from "$lib/aboutme";
+    import Link from "$lib/components/Link.svelte";
+    import NavLink from "$lib/components/NavLink.svelte";
     import VerticalRule from "$lib/components/VerticalRule.svelte";
     import { getPostUrl } from "$lib/config";
     import type { PostCategory, PostTag } from "$lib/generated/types.js";
@@ -95,6 +97,9 @@
 			</select>
 			<VerticalRule />
 		</li>
+
+		<!-- RSS link -->
+		<NavLink route="/blog/rss" text="RSS" />
 	</ul>
 	<noscript>
 		(Sorting/filtering only works with JavaScript, sorry!) <br/>
@@ -113,6 +118,8 @@
 			</li>
 		{:else}
 			<p>Nothing here!</p>
+			<p><i>The blog is probably still caching server-side.
+				Refresh in 10 to 15 seconds!</i></p>
 		{/each}
 	</ul>
 	<br/>

@@ -101,3 +101,7 @@ export function refreshPage() {
 	const current = window.location.pathname;
 	goto('/#').then(() => goto(current));
 }
+
+export function randomFromList(l: any[]) : any {
+	return l[Math.floor((Math.random()*l.length))];
+  }

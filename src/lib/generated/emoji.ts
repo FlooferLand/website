@@ -1,7 +1,10 @@
 // This file is generated via a script
 
-export type EmojiName = "girrl" | "impostor" | "uncanny";
+export type EmojiName = "clippy" | "girrl" | "impostor" | "uncanny";
 export const emojiNames = {
+	"clippy": {
+		"path": "emoji\\variants\\clippy.webp"
+	},
 	"girrl": {
 		"path": "emoji\\variants\\girrl.webp"
 	},

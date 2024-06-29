@@ -23,7 +23,7 @@
         text-align: justify;
         padding: 3pt;
         margin-block: 3pt;
-        margin-bottom: 5pt;
+        margin-bottom: 8pt;
         
         cursor: default;
 

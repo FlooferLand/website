@@ -4,7 +4,7 @@
     export let name: EmojiName;
 </script>
 
-<img src={emojiNames[name].path} alt="({name} emoji)" class="emoji">
+<img src={emojiNames[name].path} alt="📎" class="emoji">
 
 <style lang="scss">
     img {
