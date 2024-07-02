@@ -9,5 +9,9 @@
     }],
     "scripts": {
       "build": "bun run build"
-    }
+    },
+    "routes": [{
+        "src": "/assets/(.*)",
+        "dest": "/assets/$1"
+    }]
 }
