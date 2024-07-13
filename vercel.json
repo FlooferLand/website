@@ -2,13 +2,6 @@
     "devCommand": "bun run dev",
     "buildCommand": "bun run build",
     "framework": "sveltekit",
-    "builds": [{
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-            "distDir": "assets"
-        }
-    }],
     "redirects": [],
     "trailingSlash": false
 }

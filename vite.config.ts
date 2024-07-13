@@ -6,7 +6,7 @@ import { enhancedImages } from "@sveltejs/enhanced-img";
 
 // Asset locations
 const rootFolder = __dirname
-const assetsFolder = path.resolve(rootFolder)
+const assetsFolder = path.resolve(rootFolder, "assets")
 const postsFolder = path.resolve(rootFolder, postsPath);
 //const libFolder = path.resolve(rootFolder, "./src/lib")
 
