@@ -18,7 +18,7 @@ export default defineConfig({
 		nodePolyfills({
 			overrides: {
 				// Use `memfs` since `fs` is not supported in browsers
-				fs: "memfs",
+				// fs: "memfs",
 			},
 		}),
 		enhancedImages(),
