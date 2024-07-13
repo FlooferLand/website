@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import path from "path";
 import { postsPath } from "./src/lib/config";
 import { enhancedImages } from "@sveltejs/enhanced-img";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 // Asset locations
 const rootFolder = __dirname
@@ -14,6 +15,12 @@ const postsFolder = path.resolve(rootFolder, postsPath);
 export default defineConfig({
 	plugins: [
 		sveltekit(),
+		nodePolyfills({
+			overrides: {
+				// Use `memfs` since `fs` is not supported in browsers
+				fs: "memfs",
+			},
+		}),
 		enhancedImages(),
 	],
 	resolve: {

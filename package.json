@@ -47,6 +47,7 @@
     "crypto-js": "^4.2.0",
     "lucide-svelte": "^0.408.0",
     "mdsvex": "^0.11.2",
+    "memfs": "^4.9.3",
     "open-props": "^1.7.5",
     "rehype-sanitize": "^6.0.0",
     "remark-breaks": "^4.0.0",
@@ -57,6 +58,7 @@
     "remark-unwrap-images": "^4.0.0",
     "shiki": "^1.10.3",
     "shiki-transformer-copy-button": "^0.0.3",
+    "vite-plugin-node-polyfills": "^0.22.0",
     "yaml": "^2.4.5"
   }
 }
