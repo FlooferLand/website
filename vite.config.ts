@@ -17,12 +17,20 @@ export default defineConfig({
 		sveltekit(),
 		nodePolyfills({
 			exclude: [
-				"fs"
+				"fs",
+				"path"
 			],
+			globals: {
+				Buffer: true,
+				global: true,
+				process: true
+			},
 			overrides: {
 				// Use `memfs` since `fs` is not supported in browsers
 				// fs: "memfs",
+				// path: "path-browserify"
 			},
+			protocolImports: true
 		}),
 		enhancedImages(),
 	],
@@ -50,3 +58,7 @@ export default defineConfig({
 	// 	include: ["src/**/*.{test,spec}.{js,ts}"]
 	// }
 });
+function NodeGlobalsPolyfillPlugin(): import("esbuild").Plugin {
+	throw new Error("Function not implemented.");
+}
+
