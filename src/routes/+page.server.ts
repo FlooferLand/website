@@ -1,5 +1,6 @@
 import { privateEmails } from "$lib/aboutme.js";
-import { MD5 } from "crypto-js";
+import cryptoJs from "crypto-js";
+const { MD5 } = cryptoJs;
 
 const readmeLink = "https://github.com/FlooferLand"
 
