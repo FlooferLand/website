@@ -3,38 +3,38 @@
 export type EmojiName = "clippy" | "girrl" | "impostor" | "uncanny";
 export const emojiNames = {
 	"clippy": {
-		"path": "emoji\\variants\\clippy.webp"
+		"path": "assets\\emoji\\variants\\clippy.webp"
 	},
 	"girrl": {
-		"path": "emoji\\variants\\girrl.webp"
+		"path": "assets\\emoji\\variants\\girrl.webp"
 	},
 	"impostor": {
-		"path": "emoji\\variants\\impostor.webp"
+		"path": "assets\\emoji\\variants\\impostor.webp"
 	},
 	"uncanny": {
-		"path": "emoji\\variants\\uncanny.webp"
+		"path": "assets\\emoji\\variants\\uncanny.webp"
 	}
 };
 
 export type VariedEmojiName = "angy" | "borgors" | "braindead" | "nobitches" | "poker" | "thonk";
 export const variedEmojiNames = {
 	"angy": {
-		"path": "emoji\\variants\\nana\\angy.webp"
+		"path": "assets\\emoji\\variants\\nana\\angy.webp"
 	},
 	"borgors": {
-		"path": "emoji\\variants\\nana\\borgors.webp"
+		"path": "assets\\emoji\\variants\\nana\\borgors.webp"
 	},
 	"braindead": {
-		"path": "emoji\\variants\\nana\\braindead.webp"
+		"path": "assets\\emoji\\variants\\nana\\braindead.webp"
 	},
 	"nobitches": {
-		"path": "emoji\\variants\\nana\\nobitches.webp"
+		"path": "assets\\emoji\\variants\\nana\\nobitches.webp"
 	},
 	"poker": {
-		"path": "emoji\\variants\\nana\\poker.webp"
+		"path": "assets\\emoji\\variants\\nana\\poker.webp"
 	},
 	"thonk": {
-		"path": "emoji\\variants\\nana\\thonk.webp"
+		"path": "assets\\emoji\\variants\\nana\\thonk.webp"
 	}
 };
 

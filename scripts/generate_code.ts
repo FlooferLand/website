@@ -35,7 +35,7 @@ function emojisFromPath(filePath: string = "") {
 
     return objectFromKeys(
         filesNoExt,
-        key => { return { path: path.join("emoji", "variants", path.basename(filePath), files.find(e => e.startsWith(key)) ?? "ERROR") } }
+        key => { return { path: path.join(assetsPath, "emoji", "variants", path.basename(filePath), files.find(e => e.startsWith(key)) ?? "ERROR") } }
     );
 }
 function emojiVariants() {
