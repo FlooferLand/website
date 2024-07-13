@@ -16,6 +16,9 @@ export default defineConfig({
 	plugins: [
 		sveltekit(),
 		nodePolyfills({
+			exclude: [
+				"fs"
+			],
 			overrides: {
 				// Use `memfs` since `fs` is not supported in browsers
 				// fs: "memfs",
