@@ -17,8 +17,7 @@ export default defineConfig({
 		sveltekit(),
 		nodePolyfills({
 			exclude: [
-				"fs",
-				"path"
+				"fs"
 			],
 			globals: {
 				Buffer: true,
@@ -28,7 +27,7 @@ export default defineConfig({
 			overrides: {
 				// Use `memfs` since `fs` is not supported in browsers
 				// fs: "memfs",
-				// path: "path-browserify"
+				path: "path-browserify"
 			},
 			protocolImports: true
 		}),
