@@ -1,4 +1,4 @@
-FROM rust:latest as build
+FROM rust:latest AS build
 
 # WASM setup
 RUN rustup target add wasm32-unknown-unknown
@@ -14,6 +14,6 @@ RUN cargo build --release
 # Image
 FROM gcr.io/distroless/cc-debian12
 COPY --from=build /usr/src/website/target/release/backend /usr/local/bin/backend
-COPY --from=build /usr/src/website/target/frontend/dist /usr/local/bin/dist
+COPY --from=build /usr/src/website/frontend/dist /usr/local/bin/dist
 WORKDIR /usr/local/bin
 CMD ["backend"]
