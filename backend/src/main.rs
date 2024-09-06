@@ -3,6 +3,7 @@ use actix_web_lab::web::spa;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    println!("Server started");
     HttpServer::new(|| {
         App::new()
             .service(home)

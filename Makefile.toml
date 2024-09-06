@@ -1,0 +1,15 @@
+# cargo-make
+
+[env]
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
+
+[tasks.build-frontend]
+cwd = "../frontend/"
+command = "trunk"
+args = ["build"]
+
+[tasks.run-dev]
+cwd = "../"
+command = "cargo"
+args = ["run"]
+dependencies = ["build-frontend"]
