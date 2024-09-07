@@ -1,4 +1,4 @@
 [workspace]
-members = ["backend", "frontend", "common"]
-default-members = ["backend"]
+members = ["server", "client", "common"]
+default-members = ["server"]
 resolver = "2"

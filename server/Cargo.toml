@@ -1,0 +1,15 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.9.0"
+actix-web-lab = { version = "0.22.0", features = ["spa"] }
+serde = { version = "1.0.210", features = ["derive"] }
+serde_yml = "0.0.12"
+serde_json = "1.0.128"
+cached = "0.53.1"
+markdown = "1.0.0-alpha.20"
+common = { path = "../common" }
+chrono = { version = "0.4.38", features = ["serde"] }

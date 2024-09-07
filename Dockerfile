@@ -8,12 +8,12 @@ WORKDIR /usr/src/website
 COPY . .
 
 # Building
-RUN cd frontend && trunk build --release
+RUN cd client && trunk build --release
 RUN cargo build --release
 
 # Image
 FROM gcr.io/distroless/cc-debian12
-COPY --from=build /usr/src/website/target/release/backend /usr/local/bin/backend
-COPY --from=build /usr/src/website/frontend/dist /usr/local/bin/frontend/dist
+COPY --from=build /usr/src/website/target/release/server /usr/local/bin/server
+COPY --from=build /usr/src/website/client/dist /usr/local/bin/client/dist
 WORKDIR /usr/local/bin
-CMD ["backend"]
+CMD ["server"]

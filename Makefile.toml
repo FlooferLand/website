@@ -2,9 +2,10 @@
 
 [env]
 CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
+#RUSTFLAGS = "-Awarnings"
 
-[tasks.build-frontend]
-cwd = "../frontend/"
+[tasks.build-client]
+cwd = "../client/"
 command = "trunk"
 args = ["build"]
 
@@ -12,4 +13,4 @@ args = ["build"]
 cwd = "../"
 command = "cargo"
 args = ["run"]
-dependencies = ["build-frontend"]
+dependencies = ["build-client"]
