@@ -7,3 +7,22 @@ edition = "2021"
 yew = { version = "0.21.0", features = ["csr"] }
 yew-router = "0.18.0"
 common = { path = "../common" }
+
+[dependencies.web-sys]
+version = "0.3.70"
+features = [
+    "HtmlAudioElement"
+]
+
+[dependencies.yew_icons]
+version = "0.8.0"
+features = [
+    # Social icons
+    "BootstrapGithub",
+    "SimpleIconsKofi",
+    "SimpleIconsItchdotio",
+    "LucideGamepad",
+    "BootstrapEye",
+    "SimpleIconsReddit",
+    "LucideMail"
+]

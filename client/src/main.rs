@@ -1,25 +1,63 @@
 mod route;
 mod navbar;
+mod social;
+mod media_player;
 
 use yew::prelude::*;
-use yew_router::prelude::*;
 use yew_router::{BrowserRouter, Switch};
 use crate::navbar::{NavBar, NavButton};
 use crate::route::{switch, Route};
 
 #[function_component(App)]
 fn app() -> Html {
-    html! { <>
-        <div>
-            <NavBar>
-                <NavButton name={"Home"} route={Route::Home} />
-                <NavButton name={"Test"} route={Route::NotFound} />
-            </NavBar>
+    let login_tooltip_visible = use_state(|| false);
+    let on_mouse_over = {
+        let visible = login_tooltip_visible.clone();
+        Callback::from(move |_| {
+            visible.set(true);
+        })
+    };
+    let on_mouse_out = {
+        let visible = login_tooltip_visible.clone();
+        Callback::from(move |_| {
+            visible.set(false);
+        })
+    };
+    
+    html! {
+        <div id={"body-inner"}>
+            <div>
+                <NavBar>
+                    <NavButton name={"Home"} route={Route::Home} />
+                    <NavButton name={"Games"} route={Route::Games} />
+                    <NavButton name={"Blog"} route={Route::Blog} />
+
+                    <NavButton
+                        name={"Login"}
+                        route={Route::Login}
+                        right={true}
+                        on_mouse_over={on_mouse_over}
+                        on_mouse_out={on_mouse_out}
+                    />
+                    if *login_tooltip_visible {
+                        <p style="float: right; color: white">
+                            { "Not implemented yet!" }
+                        </p>
+                    }
+                </NavBar>
+            </div>
+            <div id={"route-content"}>
+                <BrowserRouter>
+                    <Switch<Route> render={switch} />
+                </BrowserRouter>
+
+                <hr/>
+                <footer>
+                    <p>{"Built using Rust, Yew and Actix-Web"}</p>
+                </footer>
+            </div>
         </div>
-        <BrowserRouter>
-            <Switch<Route> render={switch} />
-        </BrowserRouter>
-    </> }
+    }
 }
 
 fn main() {

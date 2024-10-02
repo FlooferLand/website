@@ -1,0 +1,29 @@
+.socials-button {
+	padding: 6pt;
+	margin: 3pt;
+	padding: -5pt !important;
+	width: 250pt;
+	background: linear-gradient(to top, rgba(37, 37, 37, 0.7), rgba(19, 19, 19, 0.95));
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(5px);
+	svg {  // Icon
+		color: white;
+		padding: 0;
+		margin-bottom: -5pt;
+		margin-right: 5pt;
+		text-align: center;
+	}
+    a {  // Link
+	    color: cornflowerblue;
+    }
+	span {  // Description
+		color: dimgray;
+	}
+}
+
+.socials-list {
+    list-style-type: none;
+    overflow: hidden;
+	margin: 0;
+	padding: 0;
+}

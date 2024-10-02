@@ -1,0 +1,80 @@
+@import "variables";
+@import "fonts";
+@import "social";
+
+body {
+	background-color: black;
+	background-image: url($images-location + "wp2761936.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: visible;
+}
+
+#body-inner {
+	z-index: 9999;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	overflow: auto;
+	backdrop-filter: blur(2px) contrast(90%) brightness(80%);
+
+	p, h1, h2, h3, h4, h5, h6 {
+		text-shadow: 2px 2px 2px black;
+	}
+}
+
+#route-content {
+	margin: 10pt;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	color: white;
+}
+
+footer {
+	background-color: rgba(0, 0, 0, 0.4);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+hr {
+	border: 1px solid rgba(80, 80, 80, 0.3);
+}
+
+.navbar {
+	position: sticky;
+	top: 0;
+}
+
+.navbar ul, .navbar ol {
+	list-style-type: none;
+	margin: 5pt;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgba(30, 30, 30, 0.15);
+	border: solid black 1px;
+}
+li.navbutton {
+	float: left;
+	border-radius: 10px;
+	background: linear-gradient(to top, rgba(27, 27, 27, 0.4), rgba(53, 53, 53, 0.4));
+	border: solid 1px #FFFFFF05;
+	:hover {
+		border-radius: 10px;
+		cursor: copy;
+	}
+	a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 8px 24px;
+		text-decoration: none;
+	}
+	a:hover {
+		background-color: #1f1f1f;
+	}
+}
