@@ -18,7 +18,7 @@ body {
 	top: 0;
 	left: 0;
 	overflow: auto;
-	backdrop-filter: blur(2px) contrast(90%) brightness(80%);
+	backdrop-filter: blur(2px) contrast(90%) brightness(70%) grayscale(20%);
 
 	p, h1, h2, h3, h4, h5, h6 {
 		text-shadow: 2px 2px 2px black;

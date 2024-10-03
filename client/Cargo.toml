@@ -24,5 +24,9 @@ features = [
     "LucideGamepad",
     "BootstrapEye",
     "SimpleIconsReddit",
-    "LucideMail"
+    "LucideMail",
+    "SimpleIconsTumblr",
+    "SimpleIconsMastodon",
+    "SimpleIconsDiscord",
+    "SimpleIconsYoutube"
 ]
