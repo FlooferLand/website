@@ -25,12 +25,12 @@ pub enum Route {
 pub fn switch(route: Route) -> Html {
     match route {
         Route::Home => {
-            let card = "https://flooferland.carrd.co";
+            let card = html!(<a href={"https://flooferland.carrd.co#text02"}>{"https://flooferland.carrd.co"}</a>);
             html!(<>
                 <img width={64} style={""} src={"https://avatars.githubusercontent.com/u/76737186"} />
                 <p> {"haii i'm Floof. I'm a trans-fem furry software and game developer from Europe!"} </p>
                 <p> {"I make games, music, art, 3D models, and some other stuff!"} </p>
-                <p> {"View more about me on" } <a href={card}>{card}</a> {"please!"} </p>
+                <p> {"View more about me on" } <a href={card}>{card}</a> {"please!"} <i> {"(currently still migrating things))"} </i> </p>
                 
                 <MediaPlayer />
                 
