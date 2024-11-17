@@ -1,10 +1,12 @@
 .socials-button {
-	padding: 6pt;
-	margin: 3pt;
-	padding: -5pt !important;
+	margin: 4pt;
+	padding: 8pt !important;
 	width: 250pt;
-	background: linear-gradient(to top, rgba(37, 37, 37, 0.7), rgba(19, 19, 19, 0.95));
-	border: 2px solid rgba(0, 0, 0, 0.2);
+	background: linear-gradient(to bottom, rgba(37, 37, 37, 0.45), rgba(19, 19, 19, 0.7));
+	//border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+	//border-top: 2px solid rgba(255, 255, 255, 0.6);
+	box-shadow: inset 5px 0 5px 5px #DBA632;
+	border-radius: 10pt;
 	backdrop-filter: blur(5px);
 	svg {  // Icon
 		color: white;

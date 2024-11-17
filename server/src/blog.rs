@@ -1,5 +1,4 @@
 use actix_web::{get, HttpResponse, Responder};
-use serde::{Serialize, Deserialize};
 
 // TODO: Move to the Actix JSON deserializer instead of the serde_json one
 #[get("/get")]

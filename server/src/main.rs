@@ -12,6 +12,31 @@ async fn main() -> std::io::Result<()> {
     println!("Server started at http://{}:{}/", ADDRESS.0, ADDRESS.1);
     HttpServer::new(|| {
         let mut app = App::new();
+
+        // Client assets (must be the first)
+        // Uses assets stored on GitHub when in release mode to sneakily save on bandwidth >:)
+        #[cfg(not(debug_assertions))] {
+            app = app.route("/static/{filename:.*}", web::get().to(assets_redirect));
+            app = app.service(
+                spa()
+                    .index_file("../client/dist/index.html")
+                    .static_resources_mount("/")
+                    .static_resources_location("../client/dist/")
+                    .finish()
+            );
+        }
+        #[cfg(debug_assertions)] {
+            app = app.service(actix_files::Files::new("/static", "../client/static").show_files_listing());
+        }
+
+        // Client (must be the second)
+        app = app.service(
+            spa()
+                .index_file("../client/dist/index.html")
+                .static_resources_mount("/")
+                .static_resources_location("../client/dist/")
+                .finish()
+        );
         
         // API service
         app = app.service(
@@ -26,23 +51,6 @@ async fn main() -> std::io::Result<()> {
         // Work in progress redirects (TO REMOVE!!)
         app = app.route("/games", web::get().to(|_: HttpRequest| simple_redirect("https://flooferland.netlify.app/")));
         app = app.route("/blog", web::get().to(|_: HttpRequest| simple_redirect("https://flooferland.tumblr.com/")));
-        
-        // Client assets
-        #[cfg(not(debug_assertions))] {
-            app = app.route("/static/{filename:.*}", web::get().to(assets_redirect));
-        }
-        #[cfg(debug_assertions)] {
-            app = app.service(actix_files::Files::new("/static", "./client/static").show_files_listing());
-        }
-
-        // Client (must be the last service)
-        app = app.service(
-            spa()
-                .index_file("./client/dist/index.html")
-                .static_resources_mount("/")
-                .static_resources_location("./client/dist/")
-                .finish()
-        );
         
         app
     }).bind(ADDRESS)?.run().await
@@ -61,6 +69,7 @@ async fn simple_redirect(url: &str) -> impl Responder {
         .finish()
 }
 
+#[allow(dead_code)]
 async fn assets_redirect(path: web::Path<String>) -> impl Responder {
     const ASSETS_DOMAIN: &str = "https://raw.githubusercontent.com/FlooferLand/website/refs/heads/main/client/static";
     let full_url = format!("{ASSETS_DOMAIN}/{}", path.into_inner());

@@ -1,5 +1,9 @@
-[[proxy]]
-backend = "https://127.0.0.1:8080/api/"
+#[[proxy]]
+#backend = "http://localhost:8080/"
 
 [build]
 dist = "./dist"
+
+[serve]
+addresses = ["127.0.0.1"]
+port = 8081

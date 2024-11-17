@@ -85,11 +85,11 @@ pub fn media_player(props: &MediaPlayerProps) -> Html {
         });
     }
 
-    html!(<>
-        <audio ref={audio_ref} />
-        <p style="display: inline-block">{&playlist[*current_track.clone()]}</p>
-        <button onclick={play_or_pause_audio}>{if *playing { "Pause" } else { "Play" }}</button>
-        <input type="range" min="0.0" max="1.0" step="0.01" value={DEFAULT_VOLUME.to_string()} oninput={set_volume}/>
-        <p style="display: inline-block"><i>{"(work in progress!)"}</i></p>
-    </>)
+    html!(<div class={classes!("media-player")}>
+        <audio id="mp-audio" ref={audio_ref} />
+        <p id="mp-name" style="display: inline-block">{&playlist[*current_track.clone()]}</p>
+        <button id="mp-play" onclick={play_or_pause_audio}>{if *playing { "Pause" } else { "Play" }}</button>
+        <input id="mp-volume" type="range" min="0.0" max="1.0" step="0.01" value={DEFAULT_VOLUME.to_string()} oninput={set_volume}/>
+        <p style="display: block"><i>{"(work in progress!)"}</i></p>
+    </div>)
 }

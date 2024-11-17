@@ -4,18 +4,18 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-yew = { version = "0.21.0", features = ["csr"] }
-yew-router = "0.18.0"
+yew = { version = "0.21", features = ["csr"] }
+yew-router = "0.18"
 common = { path = "../common" }
 
 [dependencies.web-sys]
-version = "0.3.70"
+version = "0.3"
 features = [
     "HtmlAudioElement"
 ]
 
 [dependencies.yew_icons]
-version = "0.8.0"
+version = "0.8"
 features = [
     # Social icons
     "BootstrapGithub",

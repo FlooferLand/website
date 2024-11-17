@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: "Arial Local";
-    src: url($fonts-location + "arial.ttf");
+    src: url("#{$fonts-location}/arial.ttf");
     font-weight: normal;
 }
 @font-face {
     font-family: "Arial Local";
-    src: url($fonts-location + "arial_bold.ttf");
+    src: url("#{$fonts-location}/arial_bold.ttf");
     font-weight: bold;
 }
 
