@@ -28,15 +28,6 @@ async fn main() -> std::io::Result<()> {
         #[cfg(debug_assertions)] {
             app = app.service(actix_files::Files::new("/static", "../client/static").show_files_listing());
         }
-
-        // Client (must be the second)
-        app = app.service(
-            spa()
-                .index_file("../client/dist/index.html")
-                .static_resources_mount("/")
-                .static_resources_location("../client/dist/")
-                .finish()
-        );
         
         // API service
         app = app.service(
@@ -51,6 +42,16 @@ async fn main() -> std::io::Result<()> {
         // Work in progress redirects (TO REMOVE!!)
         app = app.route("/games", web::get().to(|_: HttpRequest| simple_redirect("https://flooferland.netlify.app/")));
         app = app.route("/blog", web::get().to(|_: HttpRequest| simple_redirect("https://flooferland.tumblr.com/")));
+
+        
+        // Client (must be the last)
+        app = app.service(
+            spa()
+                .index_file("../client/dist/index.html")
+                .static_resources_mount("/")
+                .static_resources_location("../client/dist/")
+                .finish()
+        );
         
         app
     }).bind(ADDRESS)?.run().await
