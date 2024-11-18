@@ -55,9 +55,9 @@ async fn main() -> std::io::Result<()> {
         // Client (must be the last)
         app = app.service(
             spa()
-                .index_file("./client/dist/index.html")
+                .index_file("../client/dist/index.html")
                 .static_resources_mount("/")
-                .static_resources_location("./client/dist/")
+                .static_resources_location("../client/dist/")
                 .finish(),
         );
 
