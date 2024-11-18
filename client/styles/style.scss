@@ -2,6 +2,9 @@
 @import "fonts";
 @import "social";
 @import "media_player";
+@import "interests_list";
+@import "custom";
+@import "navbar";
 
 body {
 	overflow: visible;
@@ -11,9 +14,9 @@ body {
 	margin: 0;
 
 	background-color: black;
-	background-image: url("#{$images-location}/pexels-pixabay-259280.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-image: url("#{$images-location}/wallpapers/pexels-akos-szabo-145938-440731.jpg");
+	background-repeat: repeat;
+	background-size: auto;
 }
 
 #body-inner {
@@ -36,7 +39,7 @@ body {
 	margin: 10pt;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, span {
 	color: white;
 }
 
@@ -57,30 +60,3 @@ hr {
 	top: 0;
 }
 
-.navbar ul, .navbar ol {
-	list-style-type: none;
-	margin: 5pt;
-	padding: 0;
-	overflow: hidden;
-	background-color: rgba(30, 30, 30, 0.15);
-}
-li.navbutton {
-	float: left;
-	border-radius: 10px;
-	background: linear-gradient(to top, rgba(27, 27, 27, 0.4), rgba(53, 53, 53, 0.4));
-	border: solid 1px #FFFFFF05;
-	:hover {
-		border-radius: 10px;
-		cursor: copy;
-	}
-	a {
-		display: block;
-		color: white;
-		text-align: center;
-		padding: 8px 24px;
-		text-decoration: none;
-	}
-	a:hover {
-		background-color: #1f1f1f;
-	}
-}

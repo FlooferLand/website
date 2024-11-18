@@ -8,16 +8,15 @@ pub async fn get_blogs() -> impl Responder {
             .content_type("application/json")
             .body(blogs)
     } else {
-        HttpResponse::InternalServerError()
-            .finish()
+        HttpResponse::InternalServerError().finish()
     }
 }
 
 mod util {
-    use std::path::Path;
-    use cached::proc_macro::cached;
     use crate::paths;
+    use cached::proc_macro::cached;
     use common::blog::BlogMetadata;
+    use std::path::Path;
 
     #[cached]
     pub(crate) fn get_blogs() -> Vec<BlogMetadata> {
@@ -26,9 +25,13 @@ mod util {
             for dir in blog_dir {
                 let Ok(dir) = dir else { continue };
                 let dir = dir.path();
-                if !dir.is_dir() { continue }
+                if !dir.is_dir() {
+                    continue;
+                }
                 let Some(id) = dir.file_name() else { continue };
-                let Ok(metadata) = get_blog_metadata(id.to_string_lossy().to_string()) else { continue };
+                let Ok(metadata) = get_blog_metadata(id.to_string_lossy().to_string()) else {
+                    continue;
+                };
                 if metadata.published {
                     response.push(metadata.clone());
                 }
@@ -44,7 +47,10 @@ mod util {
             println!("{}", metadata);
             serde_yml::from_str::<BlogMetadata>(&metadata).map_err(|e| e.to_string())
         } else {
-            Err(format!("Failed to read string at path \"{}\"", path.display()))
+            Err(format!(
+                "Failed to read string at path \"{}\"",
+                path.display()
+            ))
         }
     }
 
@@ -52,8 +58,12 @@ mod util {
     pub(crate) fn get_blog(id: String) -> Option<(BlogMetadata, String)> {
         let path = Path::new(paths::BLOG).join(&id);
         let markdown_path = path.join("/index.md");
-        let Ok(metadata) = get_blog_metadata(id) else { return None };
-        let Ok(markdown) = std::fs::read_to_string(markdown_path) else { return None };
+        let Ok(metadata) = get_blog_metadata(id) else {
+            return None;
+        };
+        let Ok(markdown) = std::fs::read_to_string(markdown_path) else {
+            return None;
+        };
 
         let html = markdown::to_html(&markdown);
         Some((metadata, html))

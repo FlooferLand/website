@@ -5,8 +5,10 @@ edition = "2021"
 
 [dependencies]
 yew = { version = "0.21", features = ["csr"] }
+yew-macro = "0.21"
 yew-router = "0.18"
 common = { path = "../common" }
+markdown = "1.0.0-alpha.21"
 
 [dependencies.web-sys]
 version = "0.3"

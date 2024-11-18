@@ -3,10 +3,11 @@ use yew_icons::{Icon, IconId};
 
 #[derive(Properties, PartialEq)]
 pub struct SocialButtonProps {
-    #[prop_or(None)] pub icon: Option<IconId>,
+    #[prop_or(None)]
+    pub icon: Option<IconId>,
     pub name: String,
     pub description: String,
-    pub url: String
+    pub url: String,
 }
 
 #[function_component(SocialButton)]
@@ -22,27 +23,9 @@ pub fn social_button(props: &SocialButtonProps) -> Html {
 
 #[function_component(SocialLinkSection)]
 pub fn social_link_section() -> Html {
-    html!(<>
+    html!(<div style="flex: 0; margin-left: 20pt; margin-right: 20pt">
         <h3> {"Socials"} </h3>
         <ol class={classes!("socials-list")}>
-            <SocialButton
-                icon={IconId::SimpleIconsItchdotio}
-                url={"https://flooferland.itch.io"}
-                name={"Itch.io"}
-                description={"My games"}
-            />
-            <SocialButton
-                icon={IconId::BootstrapGithub}
-                url={"https://github.com/FlooferLand"}
-                name={"GitHub"}
-                description={"My nerdy code projects"}
-            />
-            <SocialButton
-                icon={IconId::LucideGamepad}
-                url={"https://flooferland.newgrounds.com"}
-                name={"Newgrounds"}
-                description={"My games (on the web) as well as music and animations!"}
-            />
             <SocialButton
                 icon={IconId::SimpleIconsTumblr}
                 url={"https://flooferland.tumblr.com"}
@@ -50,34 +33,16 @@ pub fn social_link_section() -> Html {
                 description={"My blogs, posts, devlogs, hot takes, etc!\nAsk me questions here!"}
             />
             <SocialButton
-                icon={IconId::SimpleIconsMastodon}
-                url={"https://fandom.garden/@FlooferLand"}
-                name={"Mastodon"}
-                description={"Twitter but better"}
+                icon={IconId::SimpleIconsItchdotio}
+                url={"https://flooferland.itch.io"}
+                name={"Itch.io"}
+                description={"My games"}
             />
             <SocialButton
-                icon={IconId::SimpleIconsDiscord}
-                url={"https://discord.com/flooferland"}
-                name={"Discord"}
-                description={"Contact me for personal stuff here! (being friends, etc)"}
-            />
-            <SocialButton
-                icon={IconId::SimpleIconsKofi}
-                url={"https://ko-fi.com/flooferland"}
-                name={"Ko-Fi"}
-                description={"Please donate here dear lord I am a broke 18 y/o and making stuff online isn't sustainable I am going to perish"}
-            />
-            <SocialButton
-                icon={IconId::LucideMail}
-                url={"mailto:yunaflarf.contact@gmail.com"}
-                name={"Email"}
-                description={"Contact me for business stuff here! (collabs, business questions, comissions, etc)"}
-            />
-            <SocialButton
-                icon={IconId::BootstrapEye}
-                url={"https://odysee.com/@FlooferLand"}
-                name={"Odysee"}
-                description={"Videos (sometimes)"}
+                icon={IconId::LucideGamepad}
+                url={"https://flooferland.newgrounds.com"}
+                name={"Newgrounds"}
+                description={"My games (on the web) as well as music and stuff!"}
             />
             <SocialButton
                 icon={IconId::SimpleIconsYoutube}
@@ -86,11 +51,41 @@ pub fn social_link_section() -> Html {
                 description={"YouTube videos (sometimes)"}
             />
             <SocialButton
+                icon={IconId::BootstrapEye}
+                url={"https://odysee.com/@FlooferLand"}
+                name={"Odysee"}
+                description={"Videos (sometimes)"}
+            />
+            <SocialButton
+                icon={IconId::BootstrapGithub}
+                url={"https://github.com/FlooferLand"}
+                name={"GitHub"}
+                description={"My nerdy code projects"}
+            />
+            <SocialButton
+                icon={IconId::SimpleIconsMastodon}
+                url={"https://fandom.garden/@FlooferLand"}
+                name={"Mastodon"}
+                description={"Twitter but better"}
+            />
+            <SocialButton
+                icon={IconId::SimpleIconsKofi}
+                url={"https://ko-fi.com/flooferland"}
+                name={"Ko-Fi"}
+                description={"Please donate here dear lord I am a broke 18 y/o and making stuff online isn't sustainable I am going to perish"}
+            />
+            <SocialButton
                 icon={IconId::SimpleIconsReddit}
                 url={"https://reddit.com/u/FlooferLand"}
                 name={"Reddit"}
                 description={"Silly degenerate platform"}
             />
+            <SocialButton
+                icon={IconId::LucideMail}
+                url={"/email"}
+                name={"Email"}
+                description={"Contact me for business stuff here! (collabs, business questions, commissions, etc)"}
+            />
         </ol>
-    </>)
+    </div>)
 }

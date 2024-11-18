@@ -1,12 +1,13 @@
-mod route;
-mod navbar;
-mod social;
 mod media_player;
+mod navbar;
+mod route;
+mod social;
+mod interests_list;
 
-use yew::prelude::*;
-use yew_router::{BrowserRouter, Switch};
 use crate::navbar::{NavBar, NavButton};
 use crate::route::{switch, Route};
+use yew::prelude::*;
+use yew_router::{BrowserRouter, Switch};
 
 #[function_component(App)]
 fn app() -> Html {
@@ -23,7 +24,7 @@ fn app() -> Html {
             visible.set(false);
         })
     };
-    
+
     html! {
         <div id={"body-inner"}>
             <div>

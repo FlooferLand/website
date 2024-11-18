@@ -1,0 +1,28 @@
+.navbar ul, .navbar ol {
+	list-style-type: none;
+	margin: 3pt;
+	padding: 3pt;
+	overflow: hidden;
+	background-color: rgba(30, 30, 30, 0.4);
+}
+li.navbutton {
+	float: left;
+	border-radius: 10px;
+	background: linear-gradient(to top, rgba(77, 77, 77, 0.4), rgba(40, 40, 40, 0.4));
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	border-top: 2px solid rgba(255, 255, 255, 0.1);
+	:hover {
+		border-radius: 10px;
+		cursor: pointer;
+	}
+	a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 8px 24px;
+		text-decoration: none;
+	}
+	a:hover {
+		background: linear-gradient(to top, rgba(90, 90, 90, 0.4), rgba(54, 54, 54, 0.4));
+	}
+}

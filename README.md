@@ -12,3 +12,4 @@ _it runs on Rust >:)_
 - https://frutiger-aero.neocities.org
 - https://frutiger-aero.neocities.org/img/home/visionpro.jpg
 - https://www.youtube.com/watch?v=PFADyVTX97w
+- https://newgrounds.com/ because their site is pretty

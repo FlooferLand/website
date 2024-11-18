@@ -1,15 +1,56 @@
-div.media-player {	
-	background-color: rgba(20, 20, 20, 0.3);
+div.media-player {
+	background: linear-gradient(to bottom, rgba(85, 85, 85, 0.5), rgba(56, 56, 56, 0.5));
+	border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+	border-top: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	padding: 10pt;
+	width: 200pt;
 	#mp-audio {
 		display: none;
 	}
 	#mp-name {
 		color: red;
+		margin: 0;
+		padding: 0 0 5pt;
 	}
-	#mp-play {
+	#mp-controls {
+		background-color: rgba(20, 20, 20, 0.4);
+		border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+		border-top: 2px solid rgba(255, 255, 255, 0.1);
+		border-radius: 20px;
+		padding: 6pt 6pt 5pt 6pt;
+		
+		#mp-buttons {
+			margin: 5pt 5pt 0 5pt;
+			
+			button {
+				color: white;
+				background: linear-gradient(to bottom, rgba(57, 57, 57, 0.82), rgba(21, 21, 21, 0.58));
+				padding: 6pt 16pt 6pt 16pt;
+				border-radius: 50px;
+				border-top: solid rgba(255, 255, 255, 0.2) 1px;
 
-	}
-	#mp-volume {
+				&:hover {
+					background: linear-gradient(to bottom, rgba(83, 83, 83, 0.82), rgba(46, 46, 46, 0.58));
+					cursor: pointer;
+				}
+			}
+		}
 
+		#mp-volume {
+			border-image: linear-gradient(90deg,var(red) 50%,#ababab 0) 1/0 100vw/0 calc(100vw + var(8));
+			appearance: none;
+			background: none;
+			cursor: default;
+			&::-webkit-slider-thumb {
+				margin-top: -5px;
+				border: solid black 3px;
+				cursor: pointer;
+			}
+			&::-webkit-slider-runnable-track {
+				background: black;
+				height: 5px;
+			}
+		}
 	}
 }

@@ -1,4 +1,9 @@
 #!/bin/bash
+
+echo "THIS SCRIPT IS CURRENTLY BROKEN"
+echo "USE CARGO-MAKE INSTEAD!"
+
+return
 clear
 
 # Functions

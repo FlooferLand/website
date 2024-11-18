@@ -530,8 +530,10 @@ name = "client"
 version = "0.1.0"
 dependencies = [
  "common",
+ "markdown",
  "web-sys",
  "yew",
+ "yew-macro",
  "yew-router",
  "yew_icons",
 ]

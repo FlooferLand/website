@@ -1,11 +1,10 @@
+use crate::route::Route;
 use yew::prelude::*;
 use yew_router::Routable;
-use crate::route::Route;
-
 
 #[derive(Properties, PartialEq)]
 pub struct NavbarProps {
-    pub children: Html
+    pub children: Html,
 }
 
 #[function_component(NavBar)]
@@ -20,14 +19,16 @@ pub fn navbar(props: &NavbarProps) -> Html {
     }
 }
 
-
 #[derive(Properties, PartialEq)]
 pub struct NavbuttonProps {
     pub name: String,
     pub route: Route,
-    #[prop_or(false)] pub right: bool,
-    #[prop_or(None)] pub on_mouse_over: Option<Callback<MouseEvent>>,
-    #[prop_or(None)] pub on_mouse_out: Option<Callback<MouseEvent>>
+    #[prop_or(false)]
+    pub right: bool,
+    #[prop_or(None)]
+    pub on_mouse_over: Option<Callback<MouseEvent>>,
+    #[prop_or(None)]
+    pub on_mouse_out: Option<Callback<MouseEvent>>,
 }
 
 #[function_component(NavButton)]

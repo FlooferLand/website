@@ -1,7 +1,10 @@
-use yew::{html, Html};
-use yew_router::prelude::*;
+use web_sys::window;
 use crate::media_player::MediaPlayer;
 use crate::social::SocialLinkSection;
+use yew::{html, Html};
+use yew_macro::classes;
+use yew_router::prelude::*;
+use crate::interests_list::InterestsListSection;
 
 #[derive(Routable, Clone, PartialEq)]
 pub enum Route {
@@ -13,9 +16,12 @@ pub enum Route {
 
     #[at("/blog")]
     Blog,
-    
+
     #[at("/login")]
     Login,
+    
+    #[at("/email")]
+    Email,
 
     #[not_found]
     #[at("/404")]
@@ -23,28 +29,52 @@ pub enum Route {
 }
 
 pub fn switch(route: Route) -> Html {
+    let is_mobile = {
+        let window = window();
+        window.map(|w| {
+            let width = w.inner_width().unwrap_or_default().as_f64().unwrap_or_default();
+            let height = w.inner_height().unwrap_or_default().as_f64().unwrap_or_default();
+            height > width
+        }).unwrap_or(false)
+    };
+    
     match route {
         Route::Home => {
-            let card = html!(<a href={"https://flooferland.carrd.co#text02"}>{"https://flooferland.carrd.co"}</a>);
             html!(<>
                 <img width={64} style={""} src={"https://avatars.githubusercontent.com/u/76737186"} />
                 <p> {"haii i'm Floof. I'm a trans-fem furry software and game developer from Europe!"} </p>
                 <p> {"I make games, music, art, 3D models, and some other stuff!"} </p>
-                <p> {"View more about me on" } <a href={card}>{card}</a> {"please!"} <i> {"(currently still migrating things))"} </i> </p>
                 
                 <MediaPlayer />
                 
                 <hr/>
-                <SocialLinkSection />
+                <div style={ if !is_mobile { "display: flex" } else { "" } }>
+                    <InterestsListSection />
+                    <SocialLinkSection />
+                </div>
             </>)
         }
+        
+        Route::Email => {
+            html!(<>
+                <h3> { "my e-mail address!!" } </h3>
+                <p> <i> { "note: this page is extra silly to fight against bots" } </i> </p>
+                <p style="display: inline-block">
+                    { "Contact me at " }
+                    <span style="color: pink">
+                        {"yunaflarf"} <div class={classes!("dot_warner")}/> {"contact"} { " at " } {"gmail"} <div class={classes!("dot_warner")}/> {"com"}
+                    </span>
+                </p>
+            </>)
+        }
+        
         Route::NotFound => {
             html!(<>
                 <h2> {"404"} </h2>
                 <p> {"Page not found"} </p>
             </>)
         }
-        
+
         // Redirects (for now)
         Route::Games | Route::Blog | Route::Login => {
             html!(<>

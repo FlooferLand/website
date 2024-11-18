@@ -1,0 +1,19 @@
+/* Custom classes for global use */
+@import "variables";
+
+.gradient_text {
+    background: linear-gradient(to bottom, #fff, #bfb);
+    background-clip: text;
+    color: transparent;
+}
+
+// Dot.. as a dot.. literally
+.dot_warner {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-left: 4px;
+	margin-right: 4px;
+	background-image: url("#{$images-location}/dot_warner.webp");
+	background-size: contain;
+}
