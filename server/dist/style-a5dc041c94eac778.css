@@ -1,0 +1,204 @@
+@font-face {
+  font-family: "Arial Local";
+  src: url("/static/fonts/arial.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Arial Local";
+  src: url("/static/fonts/arial_bold.ttf");
+  font-weight: bold;
+}
+* {
+  font-family: "Arial Local", sans-serif;
+}
+
+.socials-button {
+  margin: 4pt;
+  padding: 8pt !important;
+  width: 250pt;
+  background: linear-gradient(to bottom, rgba(37, 37, 37, 0.45), rgba(19, 19, 19, 0.7));
+  border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 5px 5px 5px rgba(255, 255, 255, 0.07);
+  border-radius: 10pt;
+  backdrop-filter: blur(5px);
+}
+.socials-button svg {
+  color: white;
+  padding: 0;
+  margin-bottom: -5pt;
+  margin-right: 5pt;
+  text-align: center;
+}
+.socials-button a {
+  color: cornflowerblue;
+}
+.socials-button span {
+  color: gray;
+}
+
+.socials-list {
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+div.media-player {
+  background: linear-gradient(to bottom, rgba(85, 85, 85, 0.5), rgba(56, 56, 56, 0.5));
+  border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 10pt;
+  width: 200pt;
+}
+div.media-player #mp-audio {
+  display: none;
+}
+div.media-player #mp-name {
+  color: red;
+  margin: 0;
+  padding: 0 0 5pt;
+}
+div.media-player #mp-controls {
+  background-color: rgba(20, 20, 20, 0.4);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 6pt 6pt 5pt 6pt;
+}
+div.media-player #mp-controls #mp-buttons {
+  margin: 5pt 5pt 0 5pt;
+}
+div.media-player #mp-controls #mp-buttons button {
+  color: white;
+  background: linear-gradient(to bottom, rgba(57, 57, 57, 0.82), rgba(21, 21, 21, 0.58));
+  padding: 6pt 16pt 6pt 16pt;
+  border-radius: 50px;
+  border-top: solid rgba(255, 255, 255, 0.2) 1px;
+}
+div.media-player #mp-controls #mp-buttons button:hover {
+  background: linear-gradient(to bottom, rgba(83, 83, 83, 0.82), rgba(46, 46, 46, 0.58));
+  cursor: pointer;
+}
+div.media-player #mp-controls #mp-volume {
+  border-image: linear-gradient(90deg, var(red) 50%, #ababab 0) 1/0 100vw/0 calc(100vw + var(8));
+  appearance: none;
+  background: none;
+  cursor: default;
+}
+div.media-player #mp-controls #mp-volume::-webkit-slider-thumb {
+  margin-top: -5px;
+  border: solid black 3px;
+  cursor: pointer;
+}
+div.media-player #mp-controls #mp-volume::-webkit-slider-runnable-track {
+  background: black;
+  height: 5px;
+}
+
+.interests_list li {
+  list-style-type: circle;
+  padding-bottom: 5pt;
+}
+
+/* Custom classes for global use */
+.gradient_text {
+  background: linear-gradient(to bottom, #fff, #bfb);
+  background-clip: text;
+  color: transparent;
+}
+
+.dot_warner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-image: url("/static/images/dot_warner.webp");
+  background-size: contain;
+}
+
+.navbar ul, .navbar ol {
+  list-style-type: none;
+  margin: 3pt;
+  padding: 3pt;
+  overflow: hidden;
+  background-color: rgba(30, 30, 30, 0.4);
+}
+
+li.navbutton {
+  float: left;
+  border-radius: 10px;
+  background: linear-gradient(to top, rgba(77, 77, 77, 0.4), rgba(40, 40, 40, 0.4));
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+li.navbutton :hover {
+  border-radius: 10px;
+  cursor: pointer;
+}
+li.navbutton a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 8px 24px;
+  text-decoration: none;
+}
+li.navbutton a:hover {
+  background: linear-gradient(to top, rgba(90, 90, 90, 0.4), rgba(54, 54, 54, 0.4));
+}
+
+body {
+  overflow: visible;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  background-image: url("/static/images/wallpapers/pexels-akos-szabo-145938-440731.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+#body-inner {
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+  backdrop-filter: blur(4px) contrast(90%) brightness(50%) grayscale(20%);
+}
+#body-inner p, #body-inner h1, #body-inner h2, #body-inner h3, #body-inner h4, #body-inner h5, #body-inner h6 {
+  text-shadow: 2px 2px 2px black;
+}
+
+#route-content {
+  margin: 10pt;
+}
+
+p, h1, h2, h3, h4, h5, h6, span {
+  color: white;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+hr {
+  border: 1px solid rgba(80, 80, 80, 0.3);
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../client/styles/fonts.scss%22,%22../../../client/styles/social.scss%22,%22../../../client/styles/media_player.scss%22,%22../../../client/styles/interests_list.scss%22,%22../../../client/styles/custom.scss%22,%22../../../client/styles/navbar.scss%22,%22../../../client/styles/style.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EACI;EACA;EACA;;AAEJ;EACI;EACA;EACA;;AAGJ;EACI;;;ACdJ;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AACA;EACC;EACA;EACA;EACA;EACA;;AAEE;EACC;;AAEJ;EACC;;;AAIF;EACI;EACA;EACH;EACA;;;AC7BD;EACC;EACA;EACA;EACA;EACA;EACA;;AACA;EACC;;AAED;EACC;EACA;EACA;;AAED;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;;AAEA;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;;AAKH;EACC;EACA;EACA;EACA;;AACA;EACC;EACA;EACA;;AAED;EACC;EACA;;;AClDH;EACC;EACA;;;ACHF;AAGA;EACI;EACA;EACA;;;AAIJ;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;;ACjBD;EACC;EACA;EACA;EACA;EACA;;;AAED;EACC;EACA;EACA;EACA;EACA;;AACA;EACC;EACA;;AAED;EACC;EACA;EACA;EACA;EACA;;AAED;EACC;;;ACjBF;EACC;EACA;EACA;EACA;EACA;EAEA;EACA;EACA;EACA;;;AAGD;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;;;AAIF;EACC;;;AAGD;EACC;;;AAGD;EACC;EACA;EACA;EACA;EACA;;;AAGD;EACC;;;AAGD;EACC;EACA%22,%22file%22:%22style.css%22%7D */
