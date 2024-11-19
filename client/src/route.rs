@@ -41,7 +41,9 @@ pub fn switch(route: Route) -> Html {
     match route {
         Route::Home => {
             html!(<>
-                <img width={64} style={""} src={"https://avatars.githubusercontent.com/u/76737186"} />
+                <div class={classes!("user_icon")}>
+                    <div style="--img: url(https://avatars.githubusercontent.com/u/76737186)" />
+                </div>
                 <p> {"haii i'm Floof. I'm a trans-fem furry software and game developer from Europe!"} </p>
                 <p> {"I make games, music, art, 3D models, and some other stuff!"} </p>
                 

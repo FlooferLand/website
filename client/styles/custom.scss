@@ -17,3 +17,26 @@
 	background-image: url("#{$images-location}/dot_warner.webp");
 	background-size: contain;
 }
+
+.user_icon {
+	background: linear-gradient(to bottom, rgba(37, 37, 37, 0.45), rgba(19, 19, 19, 0.7));
+	border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+	border-top: 2px solid rgba(255, 255, 255, 0.5);
+	box-shadow: inset 0 5px 5px 5px rgba(255, 255, 255, 0.07);
+	border-radius: 10pt;
+	width: 64pt;
+	height: 64pt;
+	padding: 0 5pt;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	img, div {
+		width: 80%;
+		height: 80%;
+		background-image: var(--img);
+		background-size: contain;
+		box-shadow: 0 0 2pt 2pt rgb(19, 19, 19) inset;
+	}
+}

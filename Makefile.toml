@@ -5,15 +5,15 @@ CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
 #RUSTFLAGS = "-Awarnings"
 
 [tasks.run-server]
+cwd = "../server"
 command = "cargo"
 args = ["watch", "-x", "run", "--package", "server"]
 
 [tasks.run-client]
 cwd = "../client"
 command = "trunk"
-args = ["serve"]
+args = ["serve", "-q"]
 
 [tasks.run-dev]
-cwd = "./"
-run_task.name = ["run-server"]
+run_task.name = ["run-server", "run-client"]
 run_task.parallel = true
