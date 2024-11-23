@@ -60,20 +60,18 @@ async fn main() -> std::io::Result<()> {
             web::get().to(|_: HttpRequest| simple_redirect("https://flooferland.carrd.co/")),
         );
 
-        // Client (must be the last)
-        app = app.service(
-            spa()
-                .index_file("../client/dist/index.html")
-                .static_resources_mount("/")
-                .static_resources_location("../client/dist/")
-                .finish(),
-        );
-
         app
     })
     .bind(ADDRESS)?
     .run()
     .await
+}
+
+// Catch-all for Yew routing
+async fn yew_catch_all() -> HttpResponse {
+    HttpResponse::Ok()
+        .content_type("text/html")
+        .body(include_str!("../../client/dist/index.html"))
 }
 
 #[get("/")]
