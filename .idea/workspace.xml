@@ -8,10 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec6721ef-519b-4217-8d71-b80427c67620" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/build-dev-docker.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run-dev-docker.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/assets/templates/badges/age.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/assets/templates/badges/invalid.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/badges.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +55,12 @@
     "Cargo.Run-dev.executor": "Run",
     "Makefile Target.Run dev.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Shell Script.Run dev.executor": "Run",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/flooferland/Documents/Programming/Rust/rust_website",
+    "last_opened_file_path": "/home/flooferland/Documents/Programming/Rust/rust_website/server/assets/templates/badges",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,15 +69,17 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "language.rust.cargo.check",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/assets/templates/badges" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/assets/templates/badges" />
       <recent name="$PROJECT_DIR$/client/static/images" />
       <recent name="$PROJECT_DIR$/client/static/images/backgrounds" />
     </key>
@@ -119,11 +123,17 @@
       <workItem from="1731950439927" duration="16181000" />
       <workItem from="1731967323459" duration="1899000" />
       <workItem from="1732000098200" duration="1299000" />
-      <workItem from="1732132513744" duration="5246000" />
+      <workItem from="1732132513744" duration="11049000" />
+      <workItem from="1732274123721" duration="4756000" />
+      <workItem from="1732365845959" duration="1534000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,9 +1,11 @@
 mod blog;
 mod paths;
+mod badges;
 
 use crate::blog::get_blogs;
 use actix_web::{get, web, App, HttpRequest, HttpResponse, HttpServer, Responder};
 use actix_web_lab::web::spa;
+use crate::badges::get_age;
 
 const ADDRESS: (&str, u16) = ("0.0.0.0", 8080);
 
@@ -31,6 +33,12 @@ async fn main() -> std::io::Result<()> {
             );
         }
 
+        // Badge service
+        app = app.service(
+            web::scope("/badges")
+                .service(get_age),
+        );
+        
         // API service
         app = app.service(
             web::scope("/api")

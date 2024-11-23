@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90mm" height="20mm" version="1.1" viewBox="0 0 90 20" xmlns="http://www.w3.org/2000/svg" aria-label="badge">
+    <defs>
+        <linearGradient id="grad-badge" x1="50%" y1="30%" x2="50%" y2="100%">
+            <stop stop-color="#7771" offset="0%" />
+            <stop stop-color="#111f" offset="100%" />
+        </linearGradient>
+        <linearGradient id="grad-text" x1="50%" y1="30%" x2="50%" y2="100%">
+            <stop stop-color="#f88" offset="0%" />
+            <stop stop-color="#4004" offset="100%" />
+        </linearGradient>
+    </defs>
+    
+    <rect x="15%" y="10%"
+          fill="url(#grad-badge)"
+          width="70%"
+          height="80%"
+          rx="10"
+          ry="10"
+    />
+    
+    <text x="50%" y="50%"
+          dominant-baseline="middle"
+          fill="url(#grad-text)"
+          font-family="'Comic Sans MS', 'serif'"
+          font-size="10px"
+          font-weight="normal"
+          xml:space="default">
+        <tspan text-anchor="middle">{} years old</tspan>
+    </text>
+</svg>
