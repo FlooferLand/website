@@ -3,6 +3,7 @@ mod navbar;
 mod route;
 mod social;
 mod interests_list;
+mod birthday_counter;
 
 use crate::navbar::{NavBar, NavButton};
 use crate::route::{switch, Route};

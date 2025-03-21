@@ -1,13 +1,32 @@
-- fav games are: Gmod/HL2 _(mostly for all the creepy horror maps)_, Minecraft, BeamNG, BATIM _(all of the games except the top-down one)_, Indigo Park, Earn To Die _(zombies go brr)_, and It Steals _(also other indie horror games)_
-- fav shows are Steven Universe, Owl House, Helluva Boss, Animaniacs, Gravity Falls, Infinity Train, and ENA
-- fav animes are Made In Abyss (original material is bad but I love the story/characters and the entire concept of the abyss!!), Re:Zero, and Fullmetal Alchemist
+- big animatronic/engineering nerd
 - loves programming _(C# and Rust mainly)_
 - potentially otherkin i dunno
-- has an awful sleep schedule _(usually falls asleep at like 6 AM)_
+- has an awful sleep schedule
 - loves creepy/comfy stuff and comfy photography also I wish I lived somewhere that had a loft I love lofts
-- lumity best ship _(hunter & willow, lake & jeese, lapis & peridot, and ruby & sapphire are proly all second favs)_
-- big animatronic/engineering nerd
 - loves making very high performance over-engineered websites like this one
 - tends to be clingy and annoying
 - try not to interact with me if youre under 15 _(I am of horrible influence and despise children)_
-- Contact me on discord!! (at @FlooferLand)
+- contact me on discord!! (at @FlooferLand)
+
+- fav games are:
+  - Gmod/HL2 _(mostly for all the creepy horror maps)_
+  - Minecraft
+  - BeamNG
+  - BATIM _(all the games except the top-down one)_
+  - Indigo Park _(racoon cutie :3)_
+  - Earn To Die _(zombies go brr)_
+  - It Steals _(also other indie horror games in general)_
+- fav shows are:
+  - Steven Universe _(fav ship: Lapis & Peridot, and Ruby & Sapphire)_
+  - Owl House
+  - Helluva Boss _(fav ship: Stolas & Blitzo)_
+  - The Amazing Digital Circus _(Gangle :3)_
+  - Gravity Falls
+  - Murder Drones _(fav ship: Uzi & N, also I love Cyn to bits completely unrelated)_
+  - Animaniacs
+  - Infinity Train (fav ship: Lake & Jeese)
+  - ENA
+- fav animes are:
+  - Made In Abyss (original material is bad but I love the story/characters and the entire concept of the abyss!!)
+  - Re:Zero
+  - Fullmetal Alchemist

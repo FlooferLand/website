@@ -8,7 +8,9 @@ yew = { version = "0.21", features = ["csr"] }
 yew-macro = "0.21"
 yew-router = "0.18"
 common = { path = "../common" }
-markdown = "1.0.0-alpha.21"
+markdown = "1.0.0-alpha.23"
+chrono = "0.4"
+chrono-humanize = "0.2.3"
 
 [dependencies.web-sys]
 version = "0.3"

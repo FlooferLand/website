@@ -11,7 +11,7 @@ const ADDRESS: (&str, u16) = ("0.0.0.0", 8080);
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    println!("Server started at http://{}:{}/", ADDRESS.0, ADDRESS.1);
+    println!("Server started at http://{}:{}/", "127.0.0.1:8080", ADDRESS.1);
     HttpServer::new(|| {
         let mut app = App::new();
 

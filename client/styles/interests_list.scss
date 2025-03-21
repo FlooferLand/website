@@ -1,6 +1,27 @@
 .interests_list {
-	li {
-		list-style-type: circle;
-		padding-bottom: 5pt;
+	font-family: "Arial Local", sans-serif;
+	font-size: larger;
+	font-weight: normal;
+	
+	ul, ol {
+		li {
+			list-style-type: circle;
+			margin: 0;
+			padding-bottom: 5pt;
+			p {
+				margin: 0;
+				padding: 0;
+			}
+			em, i {  // Italic
+				color: rgb(200, 200, 200)
+			}
+			
+			ul > li {  // Nested list
+				padding-top: 3pt;
+				em, i {  // Italic
+					color: rgb(150, 180, 180)
+				}
+			}
+		}
 	}
 }

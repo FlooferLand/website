@@ -4,6 +4,7 @@ use crate::social::SocialLinkSection;
 use yew::{html, Html};
 use yew_macro::classes;
 use yew_router::prelude::*;
+use crate::birthday_counter::BirthdayCounter;
 use crate::interests_list::InterestsListSection;
 
 #[derive(Routable, Clone, PartialEq)]
@@ -47,7 +48,10 @@ pub fn switch(route: Route) -> Html {
                 <p> {"haii i'm Floof. I'm a trans-fem furry software and game developer from Europe!"} </p>
                 <p> {"I make games, music, art, 3D models, and some other stuff!"} </p>
                 
-                <MediaPlayer />
+                <div style={ if !is_mobile { "display:grid; grid-template-columns: repeat(4, 1fr);" } else { "" } }>
+                    <MediaPlayer />
+                    <BirthdayCounter />
+                </div>
                 
                 <hr/>
                 <div style={ if !is_mobile { "display: flex" } else { "" } }>

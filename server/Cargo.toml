@@ -4,13 +4,13 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-actix-web = "4.9"
+actix-web = "4.10"
 actix-web-lab = { version = "0.23", features = ["spa"] }
 actix-files = "0.6"
 serde = { version = "1.0", features = ["derive"] }
 serde_yml = "0"
 serde_json = "1.0"
-cached = "0.54"
+cached = "0.55"
 markdown = "1.0.0-alpha.21"
 common = { path = "../common" }
 chrono = { version = "0.4", features = ["serde"] }
