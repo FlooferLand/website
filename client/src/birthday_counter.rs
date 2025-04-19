@@ -14,10 +14,15 @@ pub fn birthday_counter(_props: &BirthdayCounterProps) -> Html {
     let age = now.years_since(birthday).unwrap();
     
     let time_between: String = chrono_humanize::HumanTime::from(difference).to_text_en(Accuracy::Rough, Tense::Present);
+    let hour_timer = if difference.num_days() == 0 {
+        html!( <p>{"It is my birthday!!"}</p> )
+    } else {
+        html!( <p>{time_between}{" until my birthday"}</p> )
+    };
     
     html!(<div class={classes!("birthday_counter")}>
         <h2>{"I'm "}{age}{" years old!"}</h2>
-        <p>{time_between}{" until my birthday"}</p>
+        {hour_timer}
         <sub>{"April 19th 2006"}</sub>
     </div>)
 }
