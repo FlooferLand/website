@@ -19,13 +19,6 @@ async fn main() -> std::io::Result<()> {
         // Uses assets stored on GitHub when in release mode to sneakily save on bandwidth >:)
         #[cfg(not(debug_assertions))] {
             app = app.route("/static/{filename:.*}", web::get().to(assets_redirect));
-            app = app.service(
-                spa()
-                    .index_file("../client/dist/index.html")
-                    .static_resources_mount("/")
-                    .static_resources_location("../client/dist/")
-                    .finish(),
-            );
         }
         #[cfg(debug_assertions)] {
             app = app.service(
