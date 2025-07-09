@@ -4,11 +4,13 @@ mod route;
 mod social;
 mod interests_list;
 mod birthday_counter;
+mod webring;
 
 use crate::navbar::{NavBar, NavButton};
 use crate::route::{switch, Route};
 use yew::prelude::*;
 use yew_router::{BrowserRouter, Switch};
+use crate::webring::WebRing;
 
 #[function_component(App)]
 fn app() -> Html {

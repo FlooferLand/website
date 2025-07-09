@@ -6,6 +6,7 @@ use yew_macro::classes;
 use yew_router::prelude::*;
 use crate::birthday_counter::BirthdayCounter;
 use crate::interests_list::InterestsListSection;
+use crate::webring::WebRing;
 
 #[derive(Routable, Clone, PartialEq)]
 pub enum Route {
@@ -51,6 +52,7 @@ pub fn switch(route: Route) -> Html {
                 <div style={ if !is_mobile { "display:grid; grid-template-columns: repeat(4, 1fr);" } else { "" } }>
                     <MediaPlayer />
                     <BirthdayCounter />
+                    <WebRing />
                 </div>
                 
                 <hr/>
