@@ -18,11 +18,11 @@ async fn main() -> std::io::Result<()> {
         // Client assets (must be the first)
         // Uses assets stored on GitHub when in release mode to sneakily save on bandwidth >:)
         #[cfg(not(debug_assertions))] {
-            app = app.route("/static/{filename:.*}", web::get().to(assets_redirect));
+            app = app.route("/assets/{filename:.*}", web::get().to(assets_redirect));
         }
         #[cfg(debug_assertions)] {
             app = app.service(
-                actix_files::Files::new("/static", "../client/static").show_files_listing(),
+                actix_files::Files::new("/assets", "../client/assets").show_files_listing(),
             );
         }
 
@@ -85,7 +85,7 @@ async fn simple_redirect(url: &str) -> impl Responder {
 #[allow(dead_code)]
 async fn assets_redirect(path: web::Path<String>) -> impl Responder {
     const ASSETS_DOMAIN: &str =
-        "https://raw.githubusercontent.com/FlooferLand/website/refs/heads/main/client/static";
+        "https://raw.githubusercontent.com/FlooferLand/website/refs/heads/main/client/assets";
     let full_url = format!("{ASSETS_DOMAIN}/{}", path.into_inner());
     HttpResponse::PermanentRedirect()
         .insert_header(("Location", full_url))

@@ -94,7 +94,7 @@ pub fn media_player(_props: &MediaPlayerProps) -> Html {
             move |(audio_ref, current_track)| {
                 if let Some(audio) = audio_ref.cast::<HtmlAudioElement>() {
                     audio.set_src(&format!(
-                        "/static/audio/music/{}",
+                        "/assets/audio/music/{}",
                         &playlist[*current_track.clone()]
                     ));
                     let _ = audio.play();

@@ -14,7 +14,7 @@ fn entry(props: &EntryProps) -> Html {
 }
 #[function_component(InterestsListSection)]
 pub fn interests_list_section() -> Html {
-	let interests = markdown::to_html(include_str!("../static/markdown/interests.md"));
+	let interests = markdown::to_html(include_str!("../assets/markdown/interests.md"));
 	html!(<div style="flex: 1">
         <h3>{ "About me" }</h3>
 		<div class={classes!("gradient_text", "interests_list")}> { Html::from_html_unchecked(interests.into()) } </div>
