@@ -1,0 +1,7 @@
+{% macro social_button(icon: &str, url: &str, name: &str, description: &str) %}
+    <li class="socials-button">
+        <img src="/assets/icons/social/{{icon}}.svg" alt="" />
+        <a href="{{url}}">{{name}}</a>
+        <p>{{ description }}</p>
+    </li>
+{% endmacro %}

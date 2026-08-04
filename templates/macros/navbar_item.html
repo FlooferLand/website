@@ -1,0 +1,12 @@
+{% macro navbar_item(name: &str, route: &str, right: bool = false) %}
+    {% decl float %}
+    {% if right %}
+        {% set float = "right" %}
+    {% else %}
+        {% set float = "left" %}
+    {% endif %}
+
+    <li class="navbutton" style="float: {{float}};">
+        <a href="{{route}}">{{name}}</a>
+    </li>
+{% endmacro %}

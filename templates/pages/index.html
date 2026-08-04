@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% import "macros/social_button.html" as social_button %}
+{% import "macros/media_players.html" as media_players %}
+
+{%- block description -%}
+    The FlooferLand website!
+{%- endblock -%}
+
+{% block content %}
+    <div class="user_icon">
+        <div style="--img: url(https://avatars.githubusercontent.com/u/76737186?v=4)"></div>
+    </div>
+    <p> haii i'm Floof. I'm a trans-fem furry software and game developer from Europe! </p>
+    <p> I make games, music, art, 3D models, and some other stuff! </p>
+    
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+        {{ media_players::audio_player(vec![
+            "stars remaster.mp3",
+            "Mihro boss fight.mp3",
+            "enasong.mp3",
+            "thingsmaygetbetter.mp3",
+            "beepboxwitch.mp3",
+        ]) }}
+        
+        <div class="birthday_counter">
+            <h2>I'm {{floof.age}} years old!</h2>
+            <sub>My birthday is April 19th 2006!!</sub>
+        </div>
+        
+        <div class="web-ring">
+            <p>Web ring</p>
+            <a href="/" style="margin: 8px">
+                <img src="/assets/branding/webring.webp" alt="" style="image-rendering: pixelated" />
+            </a>
+            <a href="https://winnerwind.in" style="margin: 8px">
+                <img src="https://assets.winnerwind.in/branding/button.gif" alt="" style="image-rendering: pixelated" />
+            </a>
+        </div>
+    </div>
+    
+    <hr/>
+    <div style="display: flex">
+        {% let interests = markdown::to_html(include_str!("../../assets/markdown/interests.md")) %}
+        <div style="flex: 1">
+            <h3>About me</h3>
+            <div class="gradient_text interests_list"> {{ interests|safe }} </div>
+        </div>
+
+        <div style="flex: 0; margin-left: 20pt; margin-right: 20pt">
+            <h3>Socials</h3>
+            {% include "includes/socials.html" %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="navbar">
+    {% import "macros/navbar_item.html" as item %}
+    <ul>
+        {{ item::navbar_item("Home", "/") }}
+        {{ item::navbar_item("Games", "https://flooferland.netlify.app/") }}
+        {{ item::navbar_item("Blog", "https://flooferland.tumblr.com/") }}
+
+        {{ item::navbar_item("Login", "/login", right = true) }}
+    </ul>
+    <br/>
+</div>

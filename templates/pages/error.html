@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{%- block description -%}
+    Error!
+{%- endblock -%}
+
+{% block content %}
+    <h1>Error: {{ name }}</h1>
+    {% if let Some(info) = info %}
+        <p>{{ info }}</p>
+    {% endif %}
+{% endblock %}
