@@ -1,0 +1,2 @@
+- [] Automatically process and convert images to several different formats using `magick mogrify` and the `picture` element.
+     Also coalese gifs using the same optimizer EZ-GIF uses, as it increases compatibility with older browsers

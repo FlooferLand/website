@@ -1,16 +1,23 @@
-.navbar ul, .navbar ol {
-	list-style-type: none;
-	margin: 3pt;
-	padding: 3pt;
-	overflow: hidden;
-	background-color: rgba(30, 30, 30, 0.4);
+@import "compat";
+
+.navbar {
+	position: sticky;
+	margin: 0;
+	top: 0;
+	
+	ul, ol {
+		@include compat-bg-color(#1e1e1e66);
+		list-style-type: none;
+		padding: 3pt;
+		overflow: hidden;
+	}
 }
 li.navbutton {
+	@include compat-gradient(#28282866, #4d4d4d66);
 	float: left;
 	border-radius: 10px;
-	background: linear-gradient(to top, rgba(77, 77, 77, 0.4), rgba(40, 40, 40, 0.4));
-	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-	border-top: 2px solid rgba(255, 255, 255, 0.1);
+	border-bottom: 2px solid #0000004d;
+	border-top: 2px solid #ffffff1a;
 	:hover {
 		border-radius: 10px;
 		cursor: pointer;
@@ -23,6 +30,7 @@ li.navbutton {
 		text-decoration: none;
 	}
 	a:hover {
-		background: linear-gradient(to top, rgba(90, 90, 90, 0.4), rgba(54, 54, 54, 0.4));
+		background: #5a5a5a66;
+		background: linear-gradient(to top, #5a5a5a66, #36363666);
 	}
 }

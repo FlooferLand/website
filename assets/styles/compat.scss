@@ -1,0 +1,17 @@
+// NOTE: IE seems to ignore leading underscores in names,
+//       so `_color` can for instance be used to target IE, while keeping normal `color` around for newer browsers
+
+@mixin compat-gradient($start, $end, $direction: to bottom) {
+    $type: if($direction == to right or $direction == right, 1, 0);
+
+    background: $start;
+    background: linear-gradient($direction, $start, $end);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($end)}', GradientType=#{$type});
+}
+
+@mixin compat-bg-color($color) {
+    background-color: rgb(red($color), green($color), blue($color));
+    background-color: $color;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($color)}', endColorstr='#{ie-hex-str($color)}');
+    zoom: 1;
+}

@@ -7,9 +7,7 @@
 {%- endblock -%}
 
 {% block content %}
-    <div class="user_icon">
-        <div style="background-image: url(https://avatars.githubusercontent.com/u/76737186?v=4)"></div>
-    </div>
+    {% include "includes/icon.html" %}
     <p> haii i'm Floof. I'm a trans-fem furry software and game developer from Europe! </p>
     <p> I make games, music, art, 3D models, and some other stuff! </p>
     
@@ -29,9 +27,14 @@
         
         <div class="web-ring">
             <p>Web ring</p>
+
             <a href="/" style="margin: 8px">
-                <img src="/assets/branding/webring.webp" alt="" style="image-rendering: pixelated" />
+                <picture>
+                    <source srcset="/assets/branding/webring.webp" type="image/webp" />
+                    <img src="/assets/branding/webring.gif" alt="" style="image-rendering: pixelated" />
+                </picture>
             </a>
+
             <a href="https://winnerwind.in" style="margin: 8px">
                 <img src="https://assets.winnerwind.in/branding/button.gif" alt="" style="image-rendering: pixelated" />
             </a>

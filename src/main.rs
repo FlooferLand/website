@@ -14,7 +14,11 @@ const ADDRESS: (&str, u16) = ("0.0.0.0", 8080);
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    std::thread::spawn(move || { SiteCompiler::setup_and_watch()});
+    if cfg!(debug_assertions) {
+        std::thread::spawn(move || SiteCompiler::setup_and_watch());
+    } else {
+        SiteCompiler::compile();
+    }
 
     // Server
     println!("Server started at http://{}:{}/", "127.0.0.1", ADDRESS.1);
