@@ -1,8 +1,8 @@
-use actix_web::{HttpResponse, Responder, get, web};
+use actix_web::{HttpRequest, Responder, get, web};
 use askama::Template;
 use serde::Deserialize;
 
-use crate::extensions::AskamaTemplateExtra;
+use crate::pages::handle_route;
 
 #[derive(Template)]
 #[template(path = "audio_embed.html")]
@@ -17,13 +17,11 @@ struct QueryData {
 }
 
 #[get("/audio_embed")]
-pub async fn audio_embed(data: web::Query<QueryData>) -> impl Responder {
+pub async fn audio_embed(req: HttpRequest, data: web::Query<QueryData>) -> impl Responder {
     let guess = mime_guess::from_ext(&data.path);
     let template = AudioEmbed {
         path: data.path.to_owned(),
         mime: guess.first().map(|mime| mime.to_string())
     };
-    HttpResponse::Ok()
-        .content_type("text/html")
-        .body(template.render_page())
+    handle_route(req, template)
 }

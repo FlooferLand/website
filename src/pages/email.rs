@@ -1,7 +1,7 @@
-use actix_web::{HttpResponse, Responder, get};
+use actix_web::{HttpRequest, Responder, get};
 use askama::Template;
 
-use crate::extensions::AskamaTemplateExtra;
+use crate::pages::handle_route;
 
 #[derive(Template)]
 #[template(path = "pages/email.html")]
@@ -10,9 +10,7 @@ struct EmailPage {
 }
 
 #[get("/email")]
-pub async fn email() -> impl Responder {
+pub async fn email(req: HttpRequest) -> impl Responder {
     let template = EmailPage { };
-    HttpResponse::Ok()
-        .content_type("text/html")
-        .body(template.render_page())
+    handle_route(req, template)
 }

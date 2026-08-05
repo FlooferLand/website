@@ -1,11 +1,36 @@
-use std::path::Path;
+use std::{path::Path, sync::mpsc::Receiver};
 
 use fs_extra::dir::CopyOptions;
 use sasso::{FsImporter, OutputStyle};
 use walkdir::WalkDir;
+use notify::{RecommendedWatcher, Watcher};
 
 pub struct SiteCompiler;
 impl SiteCompiler {
+    pub fn setup_and_watch() -> anyhow::Result<()> {
+        // Spawning a watcher
+        let (tx, rx) = std::sync::mpsc::channel();
+        let mut watcher = notify::RecommendedWatcher::new(
+            tx,
+            notify::Config::default()
+        )?;
+        watcher.watch(Path::new("./assets"), notify::RecursiveMode::Recursive)?;
+
+        // Compiling on a change
+        Self::compile();
+        for res in rx {
+            match res {
+                Ok(ev) => {
+                    println!("Changed {ev:?}");
+                    Self::compile();
+                },
+                Err(err) => println!("Error watching file: {err}"),
+            }
+        }
+
+        Ok(())
+    }
+
     pub fn compile() {
         let _ = std::fs::remove_dir_all("./build");
         let _ = std::fs::create_dir_all("./build");
