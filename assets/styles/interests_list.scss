@@ -9,6 +9,7 @@
 			margin: 0;
 			padding-bottom: 5pt;
 			color: #bfb;
+			margin-left: 2rem;
 
 			@supports (background-clip: text) or (-webkit-background-clip: text) {
 				background: linear-gradient(to bottom, #fff, rgb(38, 166, 38));

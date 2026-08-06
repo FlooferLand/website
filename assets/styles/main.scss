@@ -10,28 +10,29 @@
 @import "content";
 @import "webring";
 
-// compat
-.no-details {
-  details, summary {
-    display: block;
-  }
-
-  details > * {
-    display: none;
-  }
-
-  details > summary {
-    display: block;
-  }
-
-  details.open > * {
-    display: block;
-  }
+// fuck browsers
+* {
+	margin: 0;
+	padding: 0;
 }
 
-html, body {
-	padding: 0;
-	margin: 0;
+// compat
+.no-details {
+	details, summary {
+		display: block;
+	}
+
+	details > * {
+		display: none;
+	}
+
+	details > summary {
+		display: block;
+	}
+
+	details.open > * {
+		display: block;
+	}
 }
 
 body {
@@ -44,8 +45,6 @@ body {
 
 #body-inner {
 	z-index: 9999;
-	padding: 0;
-	margin: 0;
 
 	background-color: #0d111e;
 	background-color: #00000080;
@@ -53,10 +52,6 @@ body {
     zoom: 1;
 	@supports (backdrop-filter: blur()) {
 		backdrop-filter: blur(4px) contrast(90%) grayscale(20%);
-	}
-
-	p, h1, h2, h3, h4, h5, h6 {
-		text-shadow: 2px 2px 2px black;
 	}
 }
 
@@ -85,6 +80,17 @@ body {
 p, h1, h2, h3, h4, h5, h6, span, sub, summary {
 	color: white;
 }
+p, h1, h2, h3, h4, h5, h6 {
+	text-shadow: 2px 2px 2px black;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0.6rem;
+}
+
+li {
+	margin-left: 1rem;
+	color: white;
+}
 
 a {
 	color: #2663ae;
@@ -102,6 +108,8 @@ footer {
 }
 
 hr {
+	margin-top: 3pt;
+	margin-bottom: 3pt;
 	border: 1px solid #5050504d;
 }
 
