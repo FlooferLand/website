@@ -8,35 +8,8 @@
         <link rel="stylesheet" href="/assets/styles/main.css?v=3" />
         <title>FlooferLand</title>
 
-        <!-- Cloudflare Web Analytics -->
-        <script defer type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;7d5d507f3d5e41b3845168ff7a624ed3&quot;}"></script>
-        <!-- End Cloudflare Web Analytics -->
-        
-        <!-- Ads (only testing them rn) -->
-        <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7702941199306983"
-        crossorigin="anonymous"></script-->
-
-        {% block head %}{% endblock %}
-    </head>
-    <body>
-        <div id="body-inner">
-            {% include "includes/navbar.html" %}
-
-            <div id="route-content">
-                {% block content %}
-                    <p>Something was supposed to be here..</p>
-                {% endblock %}
-
-                <hr/>
-                <footer>
-                    <p>Built using Rust and Actix-Web</p>
-                    <p><i>Mostly</i> compatible all the way down to IE6</p>
-                </footer>
-            </div>
-        </div>
-
         <!-- IE Compatibility -->
-        <script>
+        <script data-cfasync="false">
             // details/summary support for IE8 and below
             document.addEventListener("DOMContentLoaded", function() {
                 if ("open" in document.createElement("details")) return;
@@ -79,5 +52,32 @@
                 }
             });
         </script>
+
+        <!-- Cloudflare Web Analytics -->
+        <script defer type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;7d5d507f3d5e41b3845168ff7a624ed3&quot;}"></script>
+        <!-- End Cloudflare Web Analytics -->
+        
+        <!-- Ads (only testing them rn) -->
+        <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7702941199306983"
+        crossorigin="anonymous"></script-->
+
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <div id="body-inner">
+            {% include "includes/navbar.html" %}
+
+            <div id="route-content">
+                {% block content %}
+                    <p>Something was supposed to be here..</p>
+                {% endblock %}
+
+                <hr/>
+                <footer>
+                    <p>Built using Rust and Actix-Web</p>
+                    <p><i>Mostly</i> compatible all the way down to IE6</p>
+                </footer>
+            </div>
+        </div>
     </body>
 </html>
