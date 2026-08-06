@@ -1,6 +1,5 @@
 {% macro audio_player(tracks: Vec<&str>) %}
-    <div class="panel audio-player">
-        <p>Music I've made</p>
+    <div class="audio-player">
         <iframe name="audio-frame" src="/audio_embed?path=/assets/audio/music/{{ tracks[0] }}" height="60" style="border:none; width: 100%;"></iframe>
 
         <br/>

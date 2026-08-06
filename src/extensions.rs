@@ -1,3 +1,4 @@
+#![allow(unused)]
 use actix_web::http::header::HeaderMap;
 use askama::Template;
 

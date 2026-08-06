@@ -8,25 +8,30 @@
 
 {% block content %}
     {% include "includes/icon.html" %}
-    <p> haii i'm Floof. I'm a trans-fem furry software and game developer from Europe! </p>
-    <p> I make games, music, art, 3D models, and some other stuff! </p>
+    <div class="panel" style="padding: 1.5rem">
+        <p> haii i'm Floof. I'm a trans-fem furry software and game developer from Europe! </p>
+        <p> I make games, music, art, 3D models, and some other stuff! </p>
+    </div>
     
     <div class="panel-grid">
-        {{ media_players::audio_player(vec![
-            "stars remaster.mp3",
-            "Mihro boss fight.mp3",
-            "enasong.mp3",
-            "thingsmaygetbetter.mp3",
-            "beepboxwitch.mp3",
-        ]) }}
+        <div class="panel" style="max-width: 200pt">
+            <h3>Music I've made</h3>
+            {{ media_players::audio_player(vec![
+                "stars remaster.mp3",
+                "Mihro boss fight.mp3",
+                "enasong.mp3",
+                "thingsmaygetbetter.mp3",
+                "beepboxwitch.mp3",
+            ]) }}
+        </div>
         
         <div class="panel birthday_counter">
-            <h2>I'm {{floof.age}} years old!</h2>
+            <h3>I'm {{floof.age}} years old!</h3>
             <sub>My birthday is April 19th 2006!!</sub>
         </div>
         
         <div class="panel web-ring">
-            <p>Web ring</p>
+            <h3>Web ring</h3>
 
             <a href="/" style="margin: 8px">
                 <picture>
