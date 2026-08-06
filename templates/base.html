@@ -9,7 +9,7 @@
         <title>FlooferLand</title>
 
         <!-- Cloudflare Web Analytics -->
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d5d507f3d5e41b3845168ff7a624ed3"}'></script>
+        <script defer type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;7d5d507f3d5e41b3845168ff7a624ed3&quot;}"></script>
         <!-- End Cloudflare Web Analytics -->
         
         <!-- Ads (only testing them rn) -->
@@ -24,7 +24,7 @@
 
             <div id="route-content">
                 {% block content %}
-                Something was supposed to be here..
+                    <p>Something was supposed to be here..</p>
                 {% endblock %}
 
                 <hr/>
@@ -34,5 +34,50 @@
                 </footer>
             </div>
         </div>
+
+        <!-- IE Compatibility -->
+        <script>
+            // details/summary support for IE8 and below
+            document.addEventListener("DOMContentLoaded", function() {
+                if ("open" in document.createElement("details")) return;
+
+                document.documentElement.className += " no-details";
+                var list = document.querySelectorAll("details");
+                for (var i = 0; i < list.length; i++) {
+                    var details = list[i];
+                    var summary = details.querySelector("summary");
+                    if (!summary) continue;
+                        
+                    var arrow = document.createElement("span");
+                    arrow.innerText = ">";
+                    summary.insertBefore(arrow, summary.firstChild);
+
+                    if (details.getAttribute("open") !== null) {
+                        details.className = details.className + " open";
+                    }
+
+                    summary.onclick = function(e) {
+                        if (!e) e = window.event;
+                        if (e.preventDefault) {
+                            e.preventDefault();
+                        } else {
+                            e.returnValue = false;
+                        }
+                        var parent = this.parentNode;
+                        var open = parent.className.indexOf("open") !== -1;
+
+                        if (open) {
+                            parent.className = parent.className.replace(/\bopen\b/, "").trim();
+                            parent.removeAttribute("open");
+                            arrow.innerText = ">";
+                        } else {
+                            parent.className = parent.className + " open";
+                            parent.setAttribute("open", "");
+                            arrow.innerText = "\\/";
+                        }
+                    };
+                }
+            });
+        </script>
     </body>
 </html>

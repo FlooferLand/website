@@ -1,18 +1,21 @@
 {% macro audio_player(tracks: Vec<&str>) %}
-    <div class="audio-player">
+    <div class="panel audio-player">
         <p>Music I've made</p>
         <iframe name="audio-frame" src="/audio_embed?path=/assets/audio/music/{{ tracks[0] }}" height="60" style="border:none; width: 100%;"></iframe>
 
-        <details>
-            <summary>Tracks</summary>
-            <ol>
-                {% for track in tracks %}
-                    <li><a href="/audio_embed?path=/assets/audio/music/{{ track }}" target="audio-frame">{{ track }}</a></li>
-                {% endfor %}
-            </ol>
-        
-            <sub>my music player doesn't require JavaScript btw</sub>
-            <sub>HELL YEA FUCK JAVASCRIPT HELL YEA WOOOO</sub>
-        </details>
+        <br/>
+        <div style="display: block">
+            <details>
+                <summary>Tracks</summary>
+                <ol>
+                    {% for track in tracks %}
+                        <li><a href="/audio_embed?path=/assets/audio/music/{{ track }}" target="audio-frame">{{ track }}</a></li>
+                    {% endfor %}
+                </ol>
+            
+                <sub>my music player doesn't require JavaScript btw</sub>
+                <sub>HELL YEA FUCK JAVASCRIPT HELL YEA WOOOO</sub>
+            </details>
+        </div>
     </div>
 {% endmacro %}

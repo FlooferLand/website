@@ -5,6 +5,24 @@
         {{ item::navbar_item("Games", "https://flooferland.netlify.app/") }}
         {{ item::navbar_item("Blog", "https://flooferland.tumblr.com/") }}
 
+        <li class="navitem"><span id="navbar-info"></span></li>
         {{ item::navbar_item("Login", "/login", right = true) }}
     </ul>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var info = document.getElementById("navbar-info");
+            var userAgent = window.navigator.userAgent;
+            if (userAgent.indexOf("MSIE") > 0 || userAgent.indexOf("Trident/") > 0 || userAgent.indexOf("Edge") > 0) {
+                info.innerText = "Internet Explorer is peak";
+            } else if (userAgent.indexOf("WiiU") > 0) {
+                info.innerText = "Wiiiuu wiiuuu";
+            } else if (userAgent.indexOf("3DS") > 0) {
+                info.innerText = "Fun fact: Closing your 3DS makes the website dissappear";
+            } else if (userAgent.indexOf("Nintendo") > 0) {
+                info.innerText = "Getting sued by the Mario company";
+            } else if (userAgent.indexOf("Netscape") > 0 || userAgent.indexOf("Navigator/") > 0) {
+                info.innerText = "Is that fucking Netscape???";
+            }
+        });
+    </script>
 </div>

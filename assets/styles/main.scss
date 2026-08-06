@@ -1,4 +1,5 @@
 @import "variables";
+@import "compat";
 @import "fonts";
 @import "social";
 @import "audio_player";
@@ -6,10 +7,26 @@
 @import "custom";
 @import "navbar";
 @import "birthday_counter";
+@import "content";
 @import "webring";
 
-*, *::before, *::after {
-    box-sizing: border-box;
+// compat
+.no-details {
+  details, summary {
+    display: block;
+  }
+
+  details > * {
+    display: none;
+  }
+
+  details > summary {
+    display: block;
+  }
+
+  details.open > * {
+    display: block;
+  }
 }
 
 html, body {
@@ -30,10 +47,13 @@ body {
 	padding: 0;
 	margin: 0;
 
-	backdrop-filter: blur(4px) contrast(90%) grayscale(20%);
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: #0d111e;
+	background-color: #00000080;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#80000000');
     zoom: 1;
+	@supports (backdrop-filter: blur()) {
+		backdrop-filter: blur(4px) contrast(90%) grayscale(20%);
+	}
 
 	p, h1, h2, h3, h4, h5, h6 {
 		text-shadow: 2px 2px 2px black;
@@ -44,7 +64,25 @@ body {
 	padding: 10pt;
 }
 
-p, h1, h2, h3, h4, h5, h6, span {
+.panel {
+	@include compat-gradient(#55555580, #38383880);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+	border-top: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	padding: 10pt;
+	margin: 0.3rem;
+}
+.panel-grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin: -8px;
+	> * {
+		flex: 1 1 220px;
+		margin: 8px;
+	}
+}
+
+p, h1, h2, h3, h4, h5, h6, span, sub, summary {
 	color: white;
 }
 
@@ -59,6 +97,7 @@ a {
 }
 
 footer {
+	padding: 0.3rem;
 	background-color: #00000066;
 }
 

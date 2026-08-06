@@ -1,0 +1,36 @@
+.content-split {
+    display: table;
+    width: 100%;
+
+    @supports (display: flex) {
+        display: flex;
+    }
+}
+
+.content-main {
+    display: table-cell;
+    vertical-align: top;
+
+    @supports (display: flex) {
+        display: block;
+        flex: 1;
+    }
+}
+
+.content-sidebar {
+    display: table-cell;
+    vertical-align: top;
+    width: 250pt;
+    padding-left: 20pt;
+    padding-right: 20pt;
+
+    @supports (display: flex) {
+        display: block;
+        flex: 0;
+        width: auto;
+        margin-left: 20pt;
+        margin-right: 20pt;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

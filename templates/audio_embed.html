@@ -15,6 +15,9 @@
                 width: 100%;
                 height: 100%;
             }
+            span, p {
+                color: white;
+            }
             audio {
                 color-scheme: dark;
                 margin: 0;
@@ -28,11 +31,11 @@
         {% if let Some(mime) = mime %}
             <audio controls autoplay>
                 <source src="{{path}}" type="{{mime}}">
-                Your browser does not support the audio tag!!
+                <p>Your browser does not support the audio tag!!</p>
             </audio>
         {% else %}
             <audio controls src="{{path}}">
-                Your browser does not support the audio tag!!
+                <p>Your browser does not support the audio tag!!</p>
             </audio>
         {% endif %}
     </body>

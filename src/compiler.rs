@@ -56,31 +56,33 @@ impl SiteCompiler {
         } else {
             println!("No styles built")
         }
-        if style_errors.len() > 0 {
-            println!("Failed to build style(s): {}", style_errors.join(", "))
+        for error in style_errors {
+            println!("/!\\ {}", error)
         }
 
     }
 
     fn compile_style(entry: DirEntry, styles_dir: &Path) -> anyhow::Result<String> {
-        let err_format = |word: &str|
-            format!("Failed to {word} style '{}'", entry.path().display());
+        let err_format = |word: &str, info: &str|
+            format!("Failed to {word} style '{}': {info}", entry.path().display());
         let out = entry.path().with_extension("").file_name().unwrap().to_string_lossy().to_string();
 
-        let Ok(scss) = std::fs::read_to_string(entry.path()) else {
-            bail!(err_format("read"))
+        let scss = match std::fs::read_to_string(entry.path()) {
+            Ok(v) => v,
+            Err(err) => bail!(err_format("read", &err.to_string())),
         };
         let importer = FsImporter::new(vec![styles_dir.to_path_buf()]);
         let options = &sasso::Options::new()
             .with_style(OutputStyle::Expanded)
             .with_syntax(sasso::Syntax::Scss)
             .with_importer(&importer);
-        let Ok(css) = sasso::compile(&scss, options) else {
-            bail!(err_format("compile"))
+        let css = match sasso::compile(&scss, options) {
+            Ok(v) => v,
+            Err(err) => bail!(err_format("compile", &err.to_string()))
         };
         if !css.is_empty() {
-            let Ok(_) = std::fs::write(entry.path().with_extension("css"), css) else {
-                bail!(err_format("write"))
+            if let Err(err) = std::fs::write(entry.path().with_extension("css"), css) {
+                bail!(err_format("write", &err.to_string()))
             };
             let _ = std::fs::remove_file(entry.path());
         }

@@ -11,7 +11,7 @@
     <p> haii i'm Floof. I'm a trans-fem furry software and game developer from Europe! </p>
     <p> I make games, music, art, 3D models, and some other stuff! </p>
     
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+    <div class="panel-grid">
         {{ media_players::audio_player(vec![
             "stars remaster.mp3",
             "Mihro boss fight.mp3",
@@ -20,12 +20,12 @@
             "beepboxwitch.mp3",
         ]) }}
         
-        <div class="birthday_counter">
+        <div class="panel birthday_counter">
             <h2>I'm {{floof.age}} years old!</h2>
             <sub>My birthday is April 19th 2006!!</sub>
         </div>
         
-        <div class="web-ring">
+        <div class="panel web-ring">
             <p>Web ring</p>
 
             <a href="/" style="margin: 8px">
@@ -42,14 +42,14 @@
     </div>
     
     <hr/>
-    <div style="display: flex">
+    <div class="content-split">
         {% let interests = markdown::to_html(include_str!("../../assets/markdown/interests.md")) %}
-        <div style="flex: 1">
+        <div class="content-main">
             <h3>About me</h3>
             <div class="gradient_text interests_list"> {{ interests|safe }} </div>
         </div>
 
-        <div style="flex: 0; margin-left: 20pt; margin-right: 20pt">
+        <div class="content-sidebar">
             <h3>Socials</h3>
             {% include "includes/socials.html" %}
         </div>

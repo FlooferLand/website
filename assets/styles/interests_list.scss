@@ -8,6 +8,15 @@
 			list-style-type: circle;
 			margin: 0;
 			padding-bottom: 5pt;
+			color: #bfb;
+
+			@supports (background-clip: text) or (-webkit-background-clip: text) {
+				background: linear-gradient(to bottom, #fff, rgb(38, 166, 38));
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+			}
+			
 			p {
 				margin: 0;
 				padding: 0;
