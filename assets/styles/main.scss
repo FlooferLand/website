@@ -46,8 +46,7 @@ body {
 #body-inner {
 	z-index: 9999;
 
-	background-color: #0d111e;
-	background-color: #00000080;
+	background-color: transparent;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#80000000');
     zoom: 1;
 	@supports (backdrop-filter: blur()) {
